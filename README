@@ -1,4 +1,16 @@
 OML | ORlib Media Library 
 
+Installation
+
 Edit verify.php to change username and password.
+mkdir xml and chown to webserveruser (most www-data).
+
+Usage
+Create Booknotes for your own comfort. 
+Shortform, Content, Index and Colophone will be formated by raw BBCode style:
+1. [b]TEXT[/b] => <b>TEXT</b>, All simple HTML-Tags (e.g. "i" or "u")
+2. [url=TEXT1]TEXT2[/url] => <a href="TEXT1">TEXT2</a>, Textlink or URL
+3. [img]TEXT[/img] => <img src="TEXT" alt="TEXT" />, Images
+4. All URLs (http://domain.tld/) will be formated to clickable links
+
 
