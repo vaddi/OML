@@ -1,7 +1,7 @@
 # OML | ORlib Media Library #
 
 A simple Booknote Manager to Organise Links, Notes, Borred or other stuff aside your real Books. 
-At the time OML is only available in German Language.
+At the time OML is only available in German Language. Latest `master` running at [www.exigem.com/oml](http://www-exigem.com/oml/)
 
 
 ## Dependencies ##
@@ -14,11 +14,11 @@ At the time OML is only available in German Language.
 
 Get last version from github.com by following command:
 
-> git clone git://github.com/vaddi/OML.git OML
+    git clone git://github.com/vaddi/OML.git OML
 
 Edit verify.php to change username and password, otherwise we will use username *admin* and password *insecure*. Make also sure the "xml" Folder is writeable by Webserveruser (often www-data) otherwise change Permissions by Hand: 
 
-> chown www-data:www-data xml
+    chown www-data:www-data xml
 
 
 ## Usage ##
@@ -37,27 +37,27 @@ Shortform, Content, Index and Colophone (all textforms) will be formated by a si
 Based on a small [PHP XML CMS][] writen by Tom Myer and a [PHP-Libary][] by Alexandre Alapetite that make OML automaticly usable on PHP4 or PHP5 Webservers.
 The Baseidea should be a simple Note for a [O'Reilly Books][]. Beside the maincoding the Idea grown up by more and more Features:
 
-- write down a native linkadress, it will be saved in same format, but will be displayed as a clickable href link
-- BBCode Shortcode style to get a litle bit more formating
-- All Content and Pageination will be get from xml Files
-- Have to be very userfriendly by simple Structure and Usage
+-  write down a native linkadress, it will be saved in same format, but will be displayed as a clickable href link
+-  BBCode Shortcode style to get a litle bit more formating
+-  All Content and Pageination will be get from xml Files
+-  Have to be very userfriendly by simple Structure and Usage
 
 
 ## On Going ##
 
 Would be nice to have:
 
-- A nice Idea for index Pageination for better viewing a lot of Books
-- CodeMirror should be for a better Syntax highlighting on Input
-- Sortable Linklist Elements
-- handheld CSS File
-- ReBuild OOP Class based, so Users are able to add own Nodes, Attributes and Content dynamicly
+-  A nice Idea for index Pageination for better viewing a lot of Books
+-  CodeMirror should be for a better Syntax highlighting on Input
+-  Sortable Linklist Elements
+-  handheld CSS File
+-  ReBuild OOP Class based, so Users are able to add own Nodes, Attributes and Content dynamicly
 
 
 ## Issuses ##
 
-- The Add-Link on create and edit Pages are stil brocken. The new javascript var wouldn't saved by submit. 
-- A h1 Element will breake the padding of the whole Entry
+-  The Add-Link on create and edit Pages are stil brocken. The new javascript var wouldn't saved by submit. 
+-  A h1 Element will breake the padding of the whole Entry
 
 
 ## Credits ##
