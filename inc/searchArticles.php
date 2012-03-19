@@ -7,10 +7,12 @@ if (PHP_VERSION>='5')
 include("head.php");
 include("functions.php");
 
-$searchTerm = $_POST['search'];
-if (empty($searchTerm)) {
+if (isset($_POST['search'])) {
+  $searchTerm = $_POST['search'];
+} else {
   $searchTerm = "empty";
 }
+
 $results = array();
 
 $verzeichnis_raw = '../xml/';
@@ -19,6 +21,8 @@ $verzeichnis_glob = glob($verzeichnis_raw . '*.xml');
 // On Empty Path
 if (count($verzeichnis_glob) == "0") {
   $val = "empty";  
+} else {
+  $val = "";
 }
 
 foreach ( $verzeichnis_glob as $key => $file) {
@@ -27,7 +31,6 @@ foreach ( $verzeichnis_glob as $key => $file) {
 	$xml = domxml_open_file($open);
 
 	//we need to pull out all the things from this file that we will need to 
-	//build our links
 	$root = $xml->root();
 
     $id = $open;
@@ -99,11 +102,9 @@ $results_count = count($results);
 </header>
 
 <?php
-if ($val != "empty") {
-  echo '<p>Ihre suche nach: <i style="font-size:14pt;"><?php echo $searchTerm ?></i> erbrachte <i style="font-size:14pt;"><?php echo $results_count ?></i> Treffer</p>';
+if ($searchTerm != "empty") {
+  echo '<p>Ihre suche nach: <i style="font-size:14pt;">'.$searchTerm.'</i> erbrachte <i style="font-size:14pt;">'.$results_count.'</i> Treffer</p>';
 }
-
-
 
 ?>
 <div id="search_content">
@@ -127,7 +128,12 @@ if ($val == "empty") {
 	    echo '</li>';
 	  }
   } else {
-	  echo "<p>Leider konnten wir unter dem Suchwort <i>" . $searchTerm . "</i> keinen Treffer landen.</p>";
+    if ($searchTerm == "empty") {
+	    echo "Leider konnten wir mit einem leeren Suchstring keinen Treffer landen.";
+    } else {
+	    echo "Leider konnten wir unter dem Suchwort <i>" . $searchTerm . "</i> keinen Treffer landen.";   
+    }
+
   }
 }
 ?>
@@ -141,3 +147,4 @@ if ($val == "empty") {
 
 </body>
 </html>
+
