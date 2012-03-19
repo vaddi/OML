@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<book isbn="978-3-89721-516-0">
+  <status>online</status>
+  <headline>XML - kurz Referenz</headline>
+  <authors>Maik Vattersen, Jan Marienfeld, Gerhard Fabek</authors>
+  <keywords>XML, kurz, Referenz</keywords>
+  <color>#67138B</color>
+  <cfs>32pt</cfs>
+  <image>img/xml_krf.png</image>
+  <abstract>kurz beschreibung</abstract>
+  <index>Inhaltsverzeichnis&#xD;
+&#xD;
+        Einleitung  7&#xD;
+</index>
+  <description>[b]XML[/b] steht f&#xFC;r [b]Extensible Markup Language[/b] sowie f&#xFC;r Flexibilit&#xE4;t, Austauschbarkeit und Universalit&#xE4;t. XML findet man quasi &#xFC;berall dort, wo es das Format der Wahl f&#xFC;r Dokumente in den verschiedensten Anwendungen ist, von Konfigurationsdateien bis zum Nachrichtenaustausch zwischen WebServern.&#xD;
+&#xD;
+Mittels der XPath erweiterung in PHP kann man erreignisbasiert durch die einzelnen Nodes eines xml Dokumentes suchen.</description>
+  <colophone>Auch diese Anwendung speichert ihre Dateien im xml Dateiformat [url=./xml/]./xml/[/url]. So k&#xF6;nnen Sie diese leicht in andere WebAnwendungen integrieren.</colophone>
+  <links>
+    <link>http://www.oreilly.de/catalog/xmltb3ger/</link>
+    <link>http://www.domain.com/</link>
+  </links>
+  <version>v 0.1</version>
+  <lent>im Regal</lent>
+  <lent_name></lent_name>
+  <lent_date></lent_date>
+</book>

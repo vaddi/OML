@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<book isbn="133-0515-862-2">
+  <status>online</status>
+  <headline>eXigem Media</headline>
+  <authors>M. Vattersen, G. Fabek</authors>
+  <keywords>exigem, media, budget, firma</keywords>
+  <color>#008080</color>
+  <cfs>32pt</cfs>
+  <image></image>
+  <abstract>Die eXigem Media GbR ist ein Lokaler Internet-Dienstanbieter mit Firmensitz in Braunschweig.&#xD;
+&#xD;
+Unser Repertoire reicht von Web Anwendungen bis hin zu Systemvirtualisierung, Administration, Wartung und Support. Besuchen Sie uns auf unserer offiziellen Webseite unter http://www.exigem.com/ und machen sich ein eigenes Bild von uns.</abstract>
+  <index>Inhaltsverzeichnis</index>
+  <description>Inhalt</description>
+  <colophone>Colophone</colophone>
+  <links>
+    <link>http://www.exigem.de/</link>
+  </links>
+  <version>v 0.1</version>
+  <lent>im Regal</lent>
+  <lent_name>Mariane Rosenberg</lent_name>
+  <lent_date>23.03.2011</lent_date>
+</book>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<book isbn="978-3-89721-520-7">
+  <status>online</status>
+  <headline>PHP - kurz Referenz</headline>
+  <authors>Maik Vattersen, Jan Marienfeld, Gerhard Fabek</authors>
+  <keywords>php, kurz, referenz</keywords>
+  <color>#CF8823</color>
+  <cfs>32pt</cfs>
+  <image>img/php_krf.png</image>
+  <abstract>kurz beschreibung</abstract>
+  <index>Inhaltsverzeichnis&#xD;
+</index>
+  <description>Bei Zeitangaben zu Beachten&#xD;
+Am 19.Januar 2038 3:14:07 (UTC) werden seit dem 1. Januar 1970 genau 2147483647 Sekunden vergangen sein. Was das besondere an 2147483647 ist? Diese Zahl ist gleich 2&#xB3;&#xB9; -1, und das ist die gr&#xF6;&#xDF;te Ganzzahl die durch eine 32bit lange Integer-Zahl mit Vorzeichen ausgedr&#xFC;ckt werden kann. Das 32. Bit f&#xE4;llt weg&lt;!--more--&gt;, da es f&#xFC;r das Vorzeichen ben&#xF6;tigt wird. Sucht da nicht nach http://www.google.com/search?q=2&#xB3;&#xB9;+-1 , wenn ihr den Anblick vieler Zahlen nicht zu ertragen verm&#xF6;gt.&#xD;
+&#xD;
+Irgendwann vor dem 19.Januar 2038 sollten Sie zu einer Hardware &#xFC;bergehen die zum Beispiel 64-Bit Speicher f&#xFC;r die Zeit verwendet. Das sollte Ihnen dann f&#xFC;r die n&#xE4;chsten 292 Milliarden Jahre keine weiteren Schwierigkeiten mehr bereiten. Leider weis ich auch nicht warum 99% der Windows User 64-Bit nur in verbindung mit dem System-RAM bringen, muss sich um irgend so eine exotische System besonderheit Besonderheit handeln...  &#xD;
+&#xD;
+Das Jahr 2038 mag noch fern erscheinen, aber &#xE4;hnliches dachten in den 50er und 60er Jahren auch die COBOL-Programmierer &#xFC;ber das Jahr 2000 und schufen eifrig die Basis f&#xFC;r das uns als Y2K bekannte Problem zum Jahreswechsel im Jahr 1999 zu 2000. Schlu&#xDF;folgernd k&#xF6;nnte man das auch auf allerlei andere Dinge beziehen die mit Zeit erst einmal nicht viel gemeinsam haben wie z.B. das Dateisystem der Festplatte, die Benutzereingabe auf einer Webseite die ihre Daten ungepr&#xFC;ft in die Datenbank wirft (http://xkcd.com/327/ -&gt; Little Bobby Tables l&#xE4;&#xDF;t gr&#xFC;&#xDF;en)</description>
+  <colophone>[Quelle]&#xD;
+Infos gefunden in O&#xB4;reilly PHP5 Kochbuch (Kapitel Zeit), ein wenig g-search und ein wenig fr&#xFC;h morgendliche Motivation.</colophone>
+  <links>
+    <link>http://www.oreilly.de/catalog/phppr3ger/</link>
+    <link>http://www.oreilly.de/catalog/phppr3ger/inx.html</link>
+  </links>
+  <version>v 0.1</version>
+  <lent>im Regal</lent>
+  <lent_name></lent_name>
+  <lent_date></lent_date>
+</book>

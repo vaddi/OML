@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<book isbn="978-3-89721-577-1">
+  <status>online</status>
+  <headline>jQuery - kurz Referenz</headline>
+  <authors>Maik Vattersen</authors>
+  <keywords>jquery, java, script</keywords>
+  <color>#95CE00</color>
+  <cfs>32pt</cfs>
+  <image></image>
+  <abstract>Kurzbeschreibung</abstract>
+  <index>Inhaltsverzeichnis</index>
+  <description>[b]&#xDC;berschrift[/b]&#xD;
+einfacher Text mit [u]unterstrichenen[/u] W&#xF6;rtern und [i]kursiver Schreibweise[/b]. http://test.com/</description>
+  <colophone>Abschlie&#xDF;endes</colophone>
+  <links>
+    <link>http://www.oreilly.de/catalog/jquery2prger/</link>
+  </links>
+  <version>v 0.1</version>
+  <lent>im Regal</lent>
+  <lent_name></lent_name>
+  <lent_date></lent_date>
+</book>
