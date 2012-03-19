@@ -1,6 +1,6 @@
 # OML | ORlib Media Library #
 
-A simple Booknote Manager to Organise Links, Notes, Borred or other stuff aside your real Books. \n
+A simple Booknote Manager to Organise Links, Notes, Borred or other stuff aside your real Books. 
 At the time OML is only available in German Language.
 
 

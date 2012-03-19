@@ -2,6 +2,8 @@
   <p>
 <?php
 
+$simple_footer = '&copy;'.date("Y").' ORlib - Media Library | <a href="https://github.com/vaddi/OML">OML</a>, Eine virtuelle B&uuml;cherei auf Basis einfacher xml Dateien. ';
+
 if (!empty($_REQUEST['file'])) {
   // Wenn ein Dateiname verwendet wird zeige das Datum von diesem    
   echo "Die Datei <b>" . $_REQUEST['file'] . "</b> wurde zuletzt am " . date ("d.m.Y \u\m H:i:s\U\h\\r", filemtime("../xml/".$file)) . " bearbeitet.";
@@ -13,13 +15,14 @@ if (!empty($_REQUEST['file'])) {
 
   if ($dateurl == "index.php") {
     // bei der index.php Datei zeigen wir das Datum von dieser
-    echo "Diese <b>" . $dateurl . "</b> wurde zuletzt am " . date ("d.m.Y \u\m H:i:s\U\h\\r", filemtime($dateurl)) . " bearbeitet.";
+//    echo "Diese <b>" . $dateurl . "</b> wurde zuletzt am " . date ("d.m.Y \u\m H:i:s\U\h\\r", filemtime($dateurl)) . " bearbeitet.";
+    echo $simple_footer;
   } else {
     // Auf allen anderen Seiten könnten wir das gleiche machen
 //    echo "Diese <b>" . $dateurl . "</b> wurde zuletzt am " . date ("d.m.Y \u\m H:i:s\U\h\\r", filemtime($dateurl)) . " bearbeitet.";
 
     // Wir zeigen hier jedoch einen default footer
-    echo '&copy;'.date("Y").' ORlib - Media Library | <a href="./">OML</a>, Eine virtuelle B&uuml;cherei auf Basis einfacher xml Dateien. ';
+    echo $simple_footer;
   }
 }
 ?>
