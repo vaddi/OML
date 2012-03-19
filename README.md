@@ -6,8 +6,8 @@ At the time OML is only available in German Language.
 
 ## Dependencies ##
 
-- PHP4 better PHP5
-- PHP XML-DomDocument 
+- [PHP][]4 better [PHP][]5
+- PHP XML-[PHP Dom][]
 
 
 ## Installation ##
@@ -16,8 +16,7 @@ Get last version from github.com by following command:
 
 > git clone git://github.com/vaddi/OML.git OML
 
-Edit verify.php to change username and password.
-Make sure the "xml" Folder is writeable by Webserver (often www-data) otherwise change Permissions by Hand: 
+Edit verify.php to change username and password, otherwise we will use username *admin* and password *insecure*. Make also sure the "xml" Folder is writeable by Webserveruser (often www-data) otherwise change Permissions by Hand: 
 
 > chown www-data:www-data xml
 
@@ -70,4 +69,6 @@ Would be nice to have:
 [PHP XML CMS]: http://www.sitepoint.com/management-system-php/
 [PHP-Libary]: http://alexandre.alapetite.fr/doc-alex/domxml-php4-php5/
 [O'Reilly Books]: http://oreilly.com/
+[PHP Dom]: http://de.php.net/manual/en/book.dom.php
+[PHP]: http://php.net/
 

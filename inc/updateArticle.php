@@ -148,22 +148,23 @@ $ilent_date = $mlent_date->append_child($ilent_date);
 //write to the file, name it by (new) id, first delete existing (old) one
 $idval = $id.".xml";
 if ( $idval === $oldid ) {
-  echo $id . " = " . $oldid . "<br>";
+//  echo $idval . " = " . $oldid . "<br>";
   
   $filename = $verzeichnis_raw . $id . ".xml";
   unlink($filename);
   $doc->dump_file($filename, false, true);
   
 } else {
-  echo $id . " | " . $oldid . "<br>";
+//  echo $idval . " | " . $oldid . "<br>";
   
-  $filename = $verzeichnis_raw . $oldid . ".xml";
+  $filename = $verzeichnis_raw . $oldid;
   unlink($filename);
-  $filename = $verzeichnis_raw . $id . ".xml";
+  $filename = $verzeichnis_raw . $idval;
   $doc->dump_file($filename, false, true);
   
 }
 
 //send user back to adminindex
 header("Location:adminindex.php");
+
 ?>

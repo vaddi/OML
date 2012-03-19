@@ -242,8 +242,7 @@ if ($file == ""){
 
       <input type='button' value='Link hinzuf&uuml;gen' id='addButton'>
       <input type='button' value='Link entfernen' id='removeButton'>
-<!--  How can we get the new values back to php? 
-      <input type='button' value='Get TextBox Value' id='getButtonValue'>-->
+<!--      <input type='button' value='Get TextBox Value' id='getButtonValue'>-->
       <input type="hidden" name="links" id="links" value="<?php echo htmlspecialchars($linksList); ?>">
       
       </td>

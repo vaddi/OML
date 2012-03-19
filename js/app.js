@@ -16,7 +16,6 @@ $(document).ready(function(){
  
 	newTextBoxDiv.appendTo("#TextBoxesGroup");
  
-  daten++;
 	counter++;
      });
  
@@ -26,10 +25,9 @@ $(document).ready(function(){
           return false;
        }   
   
-  daten--;
 	counter--;
  
-        $("#TextBoxDiv" + counter + daten).remove();
+        $("#TextBoxDiv" + counter ).remove();
         
      });
  

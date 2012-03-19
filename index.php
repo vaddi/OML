@@ -72,13 +72,13 @@ foreach($verzeichnis_glob as $key => $file){
  $abstract = extractText($ab_array);
  $abstract = htmlspecialchars("$abstract", ENT_NOQUOTES, "UTF-8"); 
    
- if (count($verzeichnis_glob) == "1") {
+ if ((count($verzeichnis_glob) == "1") and ($status != "online")) {
     echo '<li>'."\n"; 
     echo '  <a href="inc/editArticle.php?file=' . $fileraw . '"  class="verliehen">'."\n";  
     echo '  <span class="spine_publisher">ORlib</span>'."\n";   
     echo '  <div class="inlinebg" style="background:' . $color . ';">'."\n";
     echo '    <span class="spine_author">' . $authors . '</span>'."\n"; 
-    echo '    <span class="spine_title">' . $headline . '<br /> ist noch nicht online</span>'."\n"; 
+    echo '    <span class="spine_title" style="margin:-7px 0 0 0;line-height:100%;">' . $headline . '<br />'.$status.'</span>'."\n"; 
     echo '  </div>'."\n";
     echo '  <span class="spine_edition">' . $version . '</span>'."\n";
     echo '</a>'."\n";    

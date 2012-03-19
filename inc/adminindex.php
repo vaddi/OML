@@ -87,8 +87,8 @@ foreach($verzeichnis_glob as $key => $file){
 	echo "  <span class='right' style='background:" . $color . ";color:#ffffff;margin:0 -4px 0 0;padding:0px 4px;'>";
 	echo "    " . $lent . " | ";
 	echo "    " . $status . " | ";
-	echo "    <a href=\"editArticle.php?file=".$file . "\">edit</a> | ";
-	echo "    <a href=\"delArticle.php?file=" .$file . "\">delete</a>";
+	echo "    <a href=\"editArticle.php?file=".$fileraw . "\">edit</a> | ";
+	echo "    <a href=\"delArticle.php?file=" .$fileraw . "\">delete</a>";
 	echo "  </span>\n";
 	echo "</li>\n";
     $fileCount++;
