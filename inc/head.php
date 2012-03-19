@@ -33,6 +33,10 @@ if (navigator.userAgent.toLowerCase().indexOf(\'chrome\')!=-1){
 <head>    
   <title>ORlib - Media Library | OML</title>    
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--  <link rel="alternate" type="text/xml" title="RSS .92" href="inc/feed.php?type=rss1.xml" /> -->
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="inc/feed.php?type=rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3"  href="inc/feed.php?type=atom.xml" />
+
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen" />
   <script src="js/datum.js" type="text/javascript"></script>
   <script type="text/javascript">
