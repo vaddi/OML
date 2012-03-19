@@ -92,7 +92,7 @@ if (count($dh) == $fileCount) {
  echo '  <span class="spine_publisher">ORlib</span>'."\n";   
  echo '  <div class="inlinebg" style="background:#BBBBBB;">'."\n";
  echo '    <span class="spine_author">Author</span>'."\n"; 
- echo '    <span class="spine_title">Erstellen Sie das erste Buch</span>'."\n"; 
+ echo '    <span class="spine_title">Erstes Buch erstellen</span>'."\n"; 
  echo '  </div>'."\n";
  echo '  <span class="spine_edition">v 0.1</span>'."\n";
  echo '</a>'."\n";    
