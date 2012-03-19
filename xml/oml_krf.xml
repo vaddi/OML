@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<book isbn="000-0-00000-000-0">
+  <status>in bearbeitung</status>
+  <headline>OML, kurz Referenz</headline>
+  <authors>Maik Vattersen</authors>
+  <keywords>OML, kurz, Referenz</keywords>
+  <color>#67138B</color>
+  <cfs>32pt</cfs>
+  <image>img/oml_krf.png</image>
+  <abstract>kurz beschreibung</abstract>
+  <index></index>
+  <description>[b]OML[/b] steht f&#xFC;r [b]ORlib Media Library[/b] und  f&#xFC;r Flexibilit&#xE4;t, Austauschbarkeit und Universalit&#xE4;t. OML findet man quasi &#xFC;berall dort, wo es das Format der Wahl f&#xFC;r Buch-Dokumente und zum Nachrichtenaustausch zwischen WebServern sein soll.&#xD;
+</description>
+  <colophone>Diese Anwendung speichert ihre Dateien im xml Dateiformat [url=../xml/]./xml/[/url]. So k&#xF6;nnen Sie diese leicht in andere WebAnwendungen integrieren.</colophone>
+  <links>
+    <link>http://www.exigem.com/oml/</link>
+  </links>
+  <version>v 0.1</version>
+  <lent>im Regal</lent>
+  <lent_name></lent_name>
+  <lent_date></lent_date>
+</book>
