@@ -90,26 +90,7 @@ if ($file == ""){
 <body> 
 
 <div id="wrap">
-
-<header>
-  <div class="search">
-    <form name="search" method="post" action="searchArticles.php">    
-     <input name="search" type="text" id="search" placeholder="Suchen">    
-     <button name="Search" type="submit" id="Search">Suchen</button>    
-    </form>  
-    <span class="login"><a href="logout.php">logout</a></span>
-  </div>
-  <div id="headnav"> 
-    <h1>ORlib - Media Library | OML</h1>  
-  </div>
-
-  <div id="header-time">
-     <script type="text/javascript">writeclock()</script> 
-     <noscript><p></p></noscript>
-  </div>
-
-</header>
-
+<?php include("header.php") ?>
 <div id="content">
 
 <article>
@@ -201,19 +182,19 @@ if ($file == ""){
     
     <tr> 
       <td>Kurzform</td>
-      <td><textarea name="abstract" cols="60" rows="5" id="abstract"><?php echo htmlspecialchars($abstract); ?></textarea></td>
+      <td><textarea name="abstract" cols="60" rows="5" id="abstract"><?php echo $abstract; ?></textarea></td>
     </tr>
     
     <tr> 
       <td> Buch Inhalt</td>
       <td> Inhaltsverzeichnis:<br />
-          <textarea name="index" cols="60" rows="10" wrap="soft" id="index"><?php echo htmlspecialchars($index); ?></textarea>
+          <textarea name="index" cols="60" rows="10" wrap="soft" id="index"><?php echo $index; ?></textarea>
         <br />
         Inhalt:<br />
-          <textarea name="description" cols="60" rows="10" wrap="soft" id="description" ><?php echo htmlspecialchars($description); ?></textarea>
+          <textarea name="description" cols="60" rows="10" wrap="soft" id="description" ><?php echo $description; ?></textarea>
         <br />
         Colophone:<br />
-          <textarea name="colophone" cols="60" rows="10" wrap="soft" id="colophone"><?php echo htmlspecialchars($colophone); ?></textarea>
+          <textarea name="colophone" cols="60" rows="10" wrap="soft" id="colophone"><?php echo $colophone; ?></textarea>
       </td>
     </tr>
     

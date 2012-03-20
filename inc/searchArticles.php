@@ -7,7 +7,7 @@ if (PHP_VERSION>='5')
 include("head.php");
 include("functions.php");
 
-if (isset($_POST['search'])) {
+if (isset($_POST['search']) and (!empty($_POST['search']))) {
   $searchTerm = $_POST['search'];
 } else {
   $searchTerm = "empty";
@@ -65,7 +65,9 @@ foreach ( $verzeichnis_glob as $key => $file) {
 	if ($status != "online"){
 		continue;
 	}
-
+	if (empty($searchTerm)){
+		continue;
+	}
 	if (eregi($searchTerm, $authors) || eregi($searchTerm,$keywords) || eregi($searchTerm,$abstract) || eregi($searchTerm,$headline) || eregi($searchTerm,$plead) || eregi($searchTerm,$pmain) || eregi($searchTerm,$pcon) || eregi($searchTerm,$link)){
 		$list['authors'] = $authors;
 		$list['keywords'] = $keywords;
@@ -88,9 +90,7 @@ $results_count = count($results);
 
 <body>
 <div id="wrap">
-
 <?php include("header.php") ?>
-
 <div id="content">
 
 <article>
@@ -124,7 +124,9 @@ if ($val == "empty") {
   		echo "<a href=\"showArticle.php?file=".$listing["file"]."\">" . $listing["headline"]."</a> -> \n";
 #  		$counting = count($key);echo $counting . " ";
 #     $counting = count($results);echo $counting . " ";
-  		echo trim_text($listing["pmain"], 320, $ellipses = true, $strip_html = false);
+      $text = $listing["abstract"];
+
+  		echo trim_text($text, 320, $ellipses = true, $strip_html = false);
 	    echo '</li>';
 	  }
   } else {

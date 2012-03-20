@@ -48,26 +48,7 @@ $lentList = array("false" => "im Regal", "true" => "verliehen");
 <body>
 
 <div id="wrap">
-
-<header>
-  <div class="search">
-    <form name="search" method="post" action="searchArticles.php">    
-     <input name="search" type="text" id="search" placeholder="Suchen">    
-     <button name="Search" type="submit" id="Search">Suchen</button>    
-    </form>  
-    <span class="login"><a href="logout.php">logout</a></span>
-  </div>
-  <div id="headnav"> 
-    <h1>ORlib - Media Library | OML</h1>  
-  </div>
-
-  <div id="header-time">
-     <script type="text/javascript">writeclock()</script> 
-     <noscript><p></p></noscript>
-  </div>
-
-</header>
-
+<?php include("header.php") ?>
 <div id="content">
 
 <article>

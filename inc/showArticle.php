@@ -107,9 +107,7 @@ if ($file == ""){
 <body>
 
 <div id="wrap">
-
 <?php include("header.php") ?>
-
 <div id="content">
 
 <article>
@@ -140,7 +138,7 @@ if (!empty($isbn)) {
 }
 
 if (!empty($version)) {
-  echo '<p>ORlib Version: ' . $version . '</p>';
+  echo '<p>OML Version: ' . $version . '</p>';
 }
 
 # index, description, colophone und links anzeigen
@@ -149,37 +147,40 @@ foreach ($para as $k => $v){
   $v = ereg_replace("[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]","<a href=\"\\0\" target=\"_blank\">\\0</a>", $v); # Links klickbar machen
     
   // Simple BBCode 
-  // 0 [b]TEXT[/b] => <b>TEXT</b> ALL SINGLE 
-  // 1 [h1]TEXT[/h1] => <h1>TEXT</h1> => <i>TEXT</i> ALL DOUBLE NUMBER
-  // 2 [quote=TEXT1]TEXT2[/quote] => <quote=TEXT1>TEXT2</quote> ALL by =
-  // 3 [url=TEXT1]TEXT2[/url] => <a href=TEXT1>TEXT2</a> ALL URLs with Attach
-  // 4 [url]TEXT[/url] => <a href=TEXT>TEXT</a> All single URLs
-  // 5 [img=TEXT1]TEXT2[/img] => <img src=TEXT alt=TEXT /> All Images
+  // 0 [url=TEXT1]TEXT2[/url] => <a href=TEXT1>TEXT2</a>    ALL URLs with Textattachment
+  // 1 [url]TEXT[/url] => <a href=TEXT>TEXT</a>             All single URLs and Anchors
+  // 2 [a=TEXT1]TEXT2[/a] => <a name=TEXT1>TEXT2</a>        All Anchors
+  // 3 [img=TEXT1]TEXT2[/img] => <img src=TEXT1 alt=TEXT2 /> All Images
+  // 4 [b]TEXT[/b] => <b>TEXT</b>                           ALL other SINGLE Elements (also i and u)
+  // 5 [h1]TEXT[/h1] => <h1>TEXT</h1> => <i>TEXT</i>        ALL other DOUBLE NUMBER
+  // 6 [quote=TEXT1]TEXT2[/quote] => <quote=TEXT1>TEXT2</quote> ALL other SINGLE Elements with Attribute
 
   $bbcode_regex = array(
     0 => '/\[url\=(.+?)](.+?)\[\/url\]/s',
     1 => '/\[url\](.+?)\[\/url\]/s',
-    2 => '/\[img\=(.+?)](.+?)\[\/img\]/s',
-    3 => '/\[(.+?)\](.+?)\[\/(.+?)\]/s',
-    4 => '/\[(.+?)(.+?)\](.+?)\[\/(.+?)(.+?)\]/s',
-    5 => '/\[(.+?)\=(.+?)](.+?)\[\/(.+?)\]/s');
+    2 => '/\[a\=(.+?)](.+?)\[\/a\]/s',
+    3 => '/\[img\=(.+?)](.+?)\[\/img\]/s',
+    4 => '/\[(.+?)\](.+?)\[\/(.+?)\]/s',
+    5 => '/\[(.+?)(.+?)\](.+?)\[\/(.+?)(.+?)\]/s',
+    6 => '/\[(.+?)\=(.+?)](.+?)\[\/(.+?)\]/s');
       
   $bbcode_replace = array(
     0 => '<a href="$1">$2</a>',
     1 => '<a href="$1">$1</a>', 
-    2 => '<img src="$1" alt="$2" />',
-    3 => '<$1>$2</$1>', 
-    4 => '<$1$2>$3</$4$5>', 
-    5 => '<$1=$2>$3</$1>');
+    2 => '<a name="$1">$2</a>',
+    3 => '<img src="$1" alt="$2" />',
+    4 => '<$1>$2</$1>', 
+    5 => '<$1$2>$3</$4$5>', 
+    6 => '<$1=$2>$3</$1>');
     
   $v = preg_replace($bbcode_regex, $bbcode_replace,$v);
    
-  $r1 = array("  ","\n");
-  $r2 = array("&nbsp;","<br />");
+  $r1 = array("\n");
+  $r2 = array("<br />");
   $v = str_replace( $r1, $r2, $v );
     
   if (!empty($v)) {
-    echo "<p class='para'>".$v."</p>\n";
+    echo "<div class='para'>".$v."</div>\n";
   }
 }
 ?>

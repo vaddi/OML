@@ -150,7 +150,7 @@ $idval = $id.".xml";
 if ( $idval === $oldid ) {
 //  echo $idval . " = " . $oldid . "<br>";
   
-  $filename = $verzeichnis_raw . $id . ".xml";
+  $filename = $verzeichnis_raw . $idval;
   unlink($filename);
   $doc->dump_file($filename, false, true);
   
@@ -165,6 +165,6 @@ if ( $idval === $oldid ) {
 }
 
 //send user back to adminindex
-header("Location:adminindex.php");
+header("Location:showArticle.php?file=".$idval);
 
 ?>

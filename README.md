@@ -6,8 +6,8 @@ At the time OML is only available in German Language. Latest `master` running at
 
 ## Dependencies ##
 
-- [PHP][]4 better [PHP][]5
-- PHP XML-[PHP Dom][]
+*  [PHP][]4 better [PHP][]5
+*  PHP XML-[PHP Dom][]
 
 
 ## Installation ##
@@ -37,28 +37,27 @@ Shortform, Content, Index and Colophone (all textforms) will be formated by a si
 Based on a small [PHP XML CMS][] writen by Tom Myer and a [PHP-Libary][] by Alexandre Alapetite that make OML automaticly usable on PHP4 or PHP5 Webservers.
 The Baseidea should be a simple Note for a [O'Reilly Books][]. Beside the maincoding the Idea grown up by more and more Features:
 
--  write down a native linkadress, it will be saved in same format, but will be displayed as a clickable href link
--  BBCode Shortcode style to get a litle bit more formating
--  All Content and Pageination will be get from xml Files
--  Have to be very userfriendly by simple Structure and Usage
+*  write down a native linkadress, it will be saved in same format, but will be displayed as a clickable href link
+*  BBCode Shortcode style to get a litle bit more formating
+*  All Content and Pageination will be get from xml Files
+*  Have to be very userfriendly by simple Structure and Usage
 
 
 ## On Going ##
 
 Would be nice to have:
 
--  A nice Idea for index Pageination for better viewing a lot of Books
--  CodeMirror should be for a better Syntax highlighting on Input
--  Sortable Linklist Elements
--  handheld CSS File
--  ReBuild OOP Class based, so Users are able to add own Nodes, Attributes and Content dynamicly
+*  A nice Idea for index Pageination for better viewing a lot of Books
+*  CodeMirror should be for a better Syntax highlighting on Input
+*  Sortable Linklist Elements
+*  handheld CSS File
+*  ReBuild OOP Class based, so Users are able to add own Nodes, Attributes and Content dynamicly
 
 
 ## Issuses ##
 
--  The Add-Link on create and edit Pages are stil brocken. The new javascript var wouldn't saved by submit. 
--  A h1 Element will breake the padding of the whole Entry
-
+*  The Add-Link on create and edit Pages are stil brocken. The new javascript var wouldn't saved by submit. 
+*  A h1 Element will breake padding of the Entry
 
 ## Credits ##
 

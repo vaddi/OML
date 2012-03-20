@@ -14,15 +14,12 @@ if (!empty($_REQUEST['file'])) {
   $dateurl = $break[count($break) - 1]; 
 
   if ($dateurl == "index.php") {
-    // bei der index.php Datei zeigen wir das Datum von dieser
-//    echo "Diese <b>" . $dateurl . "</b> wurde zuletzt am " . date ("d.m.Y \u\m H:i:s\U\h\\r", filemtime($dateurl)) . " bearbeitet.";
+    // bei der index.php Datei zeigen wir zusätzlich die Feedadressen
     echo $simple_footer;
-    echo ' | <a href="inc/feed.php?type=rss.xml">RSS</a> | <a href="inc/feed.php?type=atom.xml">Atom</a>';
+    echo ' | <a href="inc/feed.php">RSS</a> | <a href="inc/feed.php?type=rss2">RSS2</a> | <a href="inc/feed.php?type=atom">Atom</a>';
   } else {
     // Auf allen anderen Seiten könnten wir das gleiche machen
-//    echo "Diese <b>" . $dateurl . "</b> wurde zuletzt am " . date ("d.m.Y \u\m H:i:s\U\h\\r", filemtime($dateurl)) . " bearbeitet.";
-
-    // Wir zeigen hier jedoch einen default footer
+    // Wir zeigen hier jedoch einen default footer mit Text
     echo $simple_footer;
     echo ', Eine virtuelle B&uuml;cherei auf Basis einfacher xml Dateien. ';
   }

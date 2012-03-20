@@ -1,22 +1,16 @@
 <?php
 session_start();
+
+include("head.php");
 ?>
-<html>
-<title>Anmelden</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../css/style.css" type="text/css" rel="stylesheet" media="screen" />
-<script src="../js/datum.js" type="text/javascript"></script>
-<script type="text/javascript">
-if (navigator.userAgent.toLowerCase().indexOf('chrome')!=-1){
-  document.write('<link rel="stylesheet" type="text/css" href="../css/chrome.css"/>');
-}
-</script>
+
+
+
+
 <body>
 
 <div id="wrap">
-
 <?php include("header.php") ?>
-
 <div id="content">
 
 <article>

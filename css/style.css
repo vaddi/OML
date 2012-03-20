@@ -6,9 +6,9 @@
  \___/_/\_\_|\__, |\___|_| |_| |_| |_|  |_|\___|\__,_|_|\__,_|
              |___/ 
                                                   ___ ___ ___ 
-Site    : generator                              / __/ __/ __|
+Site    : OML | Online Media Library             / __/ __/ __|
 Author  : Maik Vattersen                        | (__\__ \__ \
-Created : 13.04.2011                             \___|___/___/
+Created : 21.03.2012                             \___|___/___/
 */
 /*----------------------------------------------------------*/
 /* Reset Some Stuff */
@@ -134,6 +134,7 @@ header .search button {
     margin:0;padding:0;
 }
 
+a:hover { text-shadow: 0 0 1px;}
 
 /* Main Link Control */
 
@@ -158,16 +159,19 @@ header a:hover, .search .login a:hover {color:#000;}
 }
 
 #content #header_big h1 {display:inline;line-height:100%;}
-#content article p, #content #search_content {margin: 10px;}
+#content article p, #content #search_content,#content .para {margin: 10px;}
 #content #article_foot {border-top:1px solid #ccc;margin: 40px 0 0 0;}
 #content #article_foot p { margin:0;padding:10px 10px;border:none;}
 #content #article_foot a { color:#fff;}
-#content #article_foot a:hover { text-shadow: 0px 0 1px #fff;color:#fff;}
+#content #search_content a, #content #search_content a:visited { color:#333;}
+#content #search_content a:hover { text-shadow: 0 0 1px #333;color:#000;}
+#content #search_content .right a, #content #search_content .right a:visited { color:#ccc;}
+#content #article_foot a:hover, #content #search_content .right a:hover { text-shadow: 0 0 1px #fff;color:#fff;}
 #content #article_foot .right a { color:#565656; font-size:120%;  line-height:130%; }
 #content #article_foot .right a:hover { color:#000; }
 #content #search_content li {padding:0 5px;}
 #content #search_content li:hover {background:#eee;}
-#content p {border-bottom:1px solid #ccc;}
+#content p,#content .para {border-bottom:1px solid #ccc;}
 #content .para+.para+.para+.para {border-bottom:none;}
 
 article {text-align:left;}
