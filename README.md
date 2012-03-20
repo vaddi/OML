@@ -16,7 +16,7 @@ Get last version from github.com by following command:
 
     git clone git://github.com/vaddi/OML.git OML
 
-Edit verify.php to change username and password, otherwise we will use username *admin* and password *insecure*. Make also sure the "xml" Folder is writeable by Webserveruser (often www-data) otherwise change Permissions by Hand: 
+Edit verify.php to change username and password, otherwise we will use username *admin* and password *insecure*. Make also sure the "xml" Folder is writeable by Webserver (often www-data) otherwise change Permissions by Hand: 
 
     chown www-data:www-data xml
 
@@ -27,9 +27,10 @@ On Empty xml Folder you will get a Link to the createArticle Site (You will be l
 Shortform, Content, Index and Colophone (all textforms) will be formated by a simple BBCode style:
 
 1.  &#91;b&#93;TEXT&#91;/b&#93; => &lt;b&gt;TEXT&lt;/b&gt;, All simple HTML-Tags (also "i" or "u")
-2.  &#91;url=TEXT1&#93;TEXT2&#91;/url&#93; => &lt;a href="TEXT1"&gt;TEXT2&lt;/a&gt;, Textlink or URL
-3.  &#91;img&#93;TEXT&#91;/img&#93; => &lt;img src="TEXT" alt="TEXT" /&gt;, Images
-4.  All URLs (http://domain.tld/) will be formated to clickable href links
+2.  &#91;a=TEXT1&#93;TEXT2&#91;/a&#93; => &lt;a name="TEXT1"&gt;TEXT2&lt;/a&gt;, Anchors
+3.  &#91;url=TEXT1&#93;TEXT2&#91;/url&#93; => &lt;a href="TEXT1"&gt;TEXT2&lt;/a&gt;, Textlink or URL
+4.  &#91;img&#93;TEXT&#91;/img&#93; => &lt;img src="TEXT" alt="TEXT" /&gt;, Images
+5.  All URLs (http://domain.tld/) will be formated to clickable href links
 
 
 ## Idea ##
@@ -39,8 +40,9 @@ The Baseidea should be a simple Note for a [O'Reilly Books][]. Beside the mainco
 
 *  write down a native linkadress, it will be saved in same format, but will be displayed as a clickable href link
 *  BBCode Shortcode style to get a litle bit more formating
-*  All Content and Pageination will be get from xml Files
+*  All Content will read from xml Files
 *  Have to be very userfriendly by simple Structure and Usage
+*  Generates automaticly RSS1, RSS2 or Atom feeds from your Books
 
 
 ## On Going ##
@@ -48,7 +50,7 @@ The Baseidea should be a simple Note for a [O'Reilly Books][]. Beside the mainco
 Would be nice to have:
 
 *  A nice Idea for index Pageination for better viewing a lot of Books
-*  CodeMirror should be for a better Syntax highlighting on Input
+*  CodeMirror could be for a better Syntax highlighting on Input
 *  Sortable Linklist Elements
 *  handheld CSS File
 *  ReBuild OOP Class based, so Users are able to add own Nodes, Attributes and Content dynamicly
@@ -57,7 +59,7 @@ Would be nice to have:
 ## Issuses ##
 
 *  The Add-Link on create and edit Pages are stil brocken. The new javascript var wouldn't saved by submit. 
-*  A h1 Element will breake padding of the Entry
+*  The Atomfeed is invalid and will not work
 
 ## Credits ##
 
