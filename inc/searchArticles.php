@@ -94,7 +94,7 @@ $results_count = count($results);
 <div id="content">
 
 <article>
-<header>
+<header id="header_big">
   <span class="right" style="margin:-2px 0 0 0;">
     <a href="../index.php" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>
   </span>

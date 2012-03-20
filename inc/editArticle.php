@@ -95,7 +95,7 @@ if ($file == ""){
 
 <article>
 
-<header style="background:<?php echo $color; ?>;color:#fff;">
+<header id="header_small" style="background:<?php echo $color; ?>;color:#fff;">
   <span class="right" style="margin:-2px 0 0 0;">
     <a href="adminindex.php" class="button">Abbrechen</a>
   </span>

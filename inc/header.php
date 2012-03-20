@@ -12,7 +12,7 @@ if (!empty($_REQUEST['file'])) {
       <input name="search" type="text" id="search" placeholder="Suchen">    
       <button name="Search" type="submit" id="Search">Suchen</button>    
     </form>  
-    <span class="login"><a href="adminindex.php">Admin</a></span>
+    <a href="adminindex.php" class="button">Admin</a>
   </div>
   <div id="headnav"> 
     <h1>OML | Online Media Library</h1> 
@@ -35,7 +35,7 @@ if (!empty($_REQUEST['file'])) {
       <input name="search" type="text" id="search" placeholder="Suchen">    
       <button name="Search" type="submit" id="Search">Suchen</button>    
     </form>  
-    <span class="login"><a href="inc/adminindex.php">Admin</a></span>
+    <a href="inc/adminindex.php" class="button">Admin</a>
   </div>
   <div id="headnav"> 
     <h1>OML | Online Media Library</h1> 
@@ -55,7 +55,26 @@ if (!empty($_REQUEST['file'])) {
      <input name="search" type="text" id="search" placeholder="Suchen">    
      <button name="Search" type="submit" id="Search">Suchen</button>    
     </form>  
-    <span class="login"><a href="logout.php">logout</a></span>
+    <a href="adminindex.php" class="button">Admin</a>
+  </div>
+  <div id="headnav"> 
+    <h1>OML | Online Media Library</h1>  
+  </div>
+
+  <div id="header-time">
+     <script type="text/javascript">writeclock()</script> 
+  </div>
+
+</header>';
+  } else if ($url == "adminindex.php") {
+    echo '
+<header>
+  <div class="search">
+    <form name="search" method="post" action="searchArticles.php">    
+     <input name="search" type="text" id="search" placeholder="Suchen">    
+     <button name="Search" type="submit" id="Search">Suchen</button>    
+    </form>  
+    <a href="logout.php" class="button">Logout</a>
   </div>
   <div id="headnav"> 
     <h1>OML | Online Media Library</h1>  
@@ -75,7 +94,7 @@ if (!empty($_REQUEST['file'])) {
      <input name="search" type="text" id="search" placeholder="Suchen">    
      <button name="Search" type="submit" id="Search">Suchen</button>    
     </form>  
-    <span class="login"><a href="adminindex.php">Admin</a></span>
+    <a href="adminindex.php" class="button">Admin</a>
   </div>
   <div id="headnav"> 
     <h1>OML | Online Media Library</h1> 

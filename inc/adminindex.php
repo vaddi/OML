@@ -25,7 +25,7 @@ include("functions.php");
 
 <article>
 
-<header style="background:#bbb;color:#fff;">
+<header id="header_big" style="background:#bbb;color:#fff;">
   <span class="right" style="margin:-2px 0 0 0;">
     <a href="createArticle.php" class="button">Buch erstellen</a>
     <a href="../index.php" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>

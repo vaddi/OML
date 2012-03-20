@@ -89,6 +89,7 @@ header .search input {
   padding:2px;
   margin:0 3px 0 0;
 }
+
 header #header-time {
  float:right;
   margin:-10px 0 0 0 ;
@@ -134,8 +135,6 @@ header .search button {
     margin:0;padding:0;
 }
 
-a:hover { text-shadow: 0 0 1px;}
-
 /* Main Link Control */
 
 a:link {text-decoration:none;}
@@ -145,6 +144,24 @@ a:visited {text-decoration:none;}
 
 header a:visited {color:#565656;}
 header a:hover, .search .login a:hover {color:#000;}
+header .search * {margin-top:-1px;}
+.main-nav a:hover {text-shadow:none;}
+
+#content_small a, #content a, footer a {
+    -moz-transition: text-shadow 0.4s ease-out;
+    -webkit-transition: text-shadow 0.4s ease-out;
+    -ms-transition: text-shadow 0.4s ease-out;
+    -o-transition: text-shadow 0.4s ease-out;
+    transition: text-shadow 0.4s ease-out;
+}
+#content_small a:hover, #content a:hover, footer a:hover {
+    text-shadow: 0 0 1px;
+    -moz-transition: text-shadow 0.2s ease-in;
+    -webkit-transition: text-shadow 0.2s ease-in;
+    -ms-transition: text-shadow 0.2s ease-in;
+    -o-transition: text-shadow 0.2s ease-in;
+    transition: text-shadow 0.2s ease-in;
+}
 
 /* Content */
 
@@ -159,6 +176,7 @@ header a:hover, .search .login a:hover {color:#000;}
 }
 
 #content #header_big h1 {display:inline;line-height:100%;}
+#content #header_big a, #content #header_small a {text-shadow:none;}
 #content article p, #content #search_content,#content .para {margin: 10px;}
 #content #article_foot {border-top:1px solid #ccc;margin: 40px 0 0 0;}
 #content #article_foot p { margin:0;padding:10px 10px;border:none;}
