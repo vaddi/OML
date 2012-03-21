@@ -7,14 +7,14 @@
   <color>#67138B</color>
   <cfs>32pt</cfs>
   <image>img/oml_krf.png</image>
-  <abstract>Kurzbeschreibung des Inhaltes, dieser wird in den Feeds als Haupttext verwendet.</abstract>
+  <abstract>OML Online Media Library Referenz erkl&#xE4;rt den Aufbau und die Funktionsweise der Anwendung. </abstract>
   <index>Inhaltsverzeichnis&#xD;
 &#xD;
         [url=#Einleitung]Einleitung[/url]&#xD;
 &#xD;
         [url=#Schema]Schema[/url]&#xD;
         [url=#Aufbau]Aufbau[/url]&#xD;
-&#xD;
+        [url=#Funktionsweise]Funktionsweise[/url]&#xD;
         [url=#Quellen]Quellen[/url]&#xD;
         &#xD;
 </index>
@@ -27,13 +27,12 @@ Diese Datei soll aderen als Informationsquelle &#xFC;ber die OML Philosophie im 
 &#xD;
 [b][a=Schema]Schema[/a][/b]&#xD;
 &#xD;
-Der Aufbau ist im wesentlichen im [url=#xml]xml[/url] Stil gehalten und muss genau wie dieser valide sein, da sonst das Parsen ohne Fehler abbgebrochen werden k&#xF6;nnte. Die einzelnen Elemente sind ineinander verschachtelt und verwenden Eigennamen als Identifikationsmerkmal.&#xD;
+Der Aufbau ist im wesentlichen im [url=#xml]xml[/url] Stil gehalten und muss genau wie dieser valide sein, da sonst das Parsen ohne Fehler abbgebrochen werden k&#xF6;nnte. Die einzelnen Elemente sind in einander verschachtelt und verwenden ihren jeweiligen Eigennamen als Identifikationsmerkmal.&#xD;
 &#xD;
 &#xD;
 [b][a=Aufbau]Aufbau[/a][/b]&#xD;
 &#xD;
 Anhand eines kurzen Beispiels wird der Aufbau am ehesten deutlich, wir sehen uns das Schema von dieser Datei an:&#xD;
-&#xD;
 [code]&#xD;
 &lt;book isbn=000-0-00000-000-0&gt;&#xD;
   &lt;status&gt;online&lt;/status&gt;&#xD;
@@ -56,22 +55,29 @@ Anhand eines kurzen Beispiels wird der Aufbau am ehesten deutlich, wir sehen uns
   &lt;lent_date/&gt;&#xD;
 &lt;/book&gt;&#xD;
 [/code]&#xD;
-&#xD;
 Der Aufbau ist wie bei allen xml Dokumenten selbst erkl&#xE4;rend. Wir &#xF6;ffnen und schlie&#xDF;en Tags, welche gleichzeitig den Namen als Element verwenden. Dadurch empfinden wohl auch unge&#xFC;bte Betrachter das lesen einer xml Datei als "nicht ganz so unangenehm".&#xD;
 &#xD;
+&#xD;
+[b][a=Funktionsweise]Funktionsweise[/a][/b]&#xD;
+&#xD;
+Die erste Ansicht im Browser gibt Ihnen einen Link zum bearbeiten dieser Datei aus. Melden Sie sich mit den von Ihnen verwendeten Benutzerdaten an (oder &#xE4;ndern sie die Datei inc/verify.php). &#xD;
+&#xD;
+In der adminindex wird Ihnen eine &#xDC;bersicht aller angelegten Dateien gezeigt. Auch diese, die noch nicht als Online markiert wurden. Sie k&#xF6;nnen &#xD;
+&#xD;
+&#xD;
 </description>
-  <colophone>Diese Anwendung speichert ihre Dateien im [url=#xml]xml[/url] Dateiformat [url=../xml/]./xml/[/url]. So k&#xF6;nnen Sie diese leicht in andere WebAnwendungen integrieren.&#xD;
+  <colophone>Diese Anwendung speichert ihre Dateien im [url=#xml]xml[/url] Dateiformat [url=../xml/]./xml/[/url]. So k&#xF6;nnen Sie diese leicht in anderen Anwendungen verwenden.&#xD;
 &#xD;
 &#xD;
 [b][a=Quellen]Quellen[/a][/b]&#xD;
 &#xD;
-[a=xml]http://xml.de/ [/a]&#xD;
+[a=xml]http://de.wikipedia.org/wiki/Xml[/a]&#xD;
 </colophone>
   <links>
     <link>http://www.exigem.com/oml/</link>
   </links>
   <version>v 0.1</version>
-  <lent>im Regal</lent>
+  <lent>verliehen</lent>
   <lent_name></lent_name>
   <lent_date></lent_date>
 </book>

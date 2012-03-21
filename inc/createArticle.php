@@ -112,9 +112,11 @@ $lentList = array("false" => "im Regal", "true" => "verliehen");
       <td>
         <ul>
           <li>1. [b]TEXT[/b] => &lt;b&gt;TEXT&lt;/b&gt;, Alle einfachen HTML-Tags (auch i oder u)</li>
-          <li>2. [url=TEXT1]TEXT2[/url] => &lt;a href="TEXT1"&gt;TEXT2&lt;/a&gt;, Textlinks oder URLs</li>
-          <li>3. [img]TEXT[/img] => &lt;img src="TEXT" alt="TEXT" /&gt;, Bilder</li>
-          <li>4. Alle URL Angaben (http://domain.tld/) werden automatisch in klickbaren Links dargestellt</li>
+          <li>2. [a=TEXT1]TEXT2[/a] => &lt;a name="TEXT1"&gt;TEXT2&lt;/a&gt;, Anker</li>
+          <li>3. [url]TEXT1[/url] => &lt;a href="TEXT"&gt;TEXT&lt;/a&gt;, einfache URLs</li>
+          <li>3. [url=TEXT1]TEXT2[/url] => &lt;a href="TEXT1"&gt;TEXT2&lt;/a&gt;, URLs mit Text</li>
+          <li>4. [img]TEXT[/img] => &lt;img src="TEXT" alt="TEXT" /&gt;, Bilder</li>
+          <li>5. Alle URL Angaben (http://domain.tld/) werden automatisch in klickbaren Links dargestellt.</li>
         </ul>
       </td>
     </tr>

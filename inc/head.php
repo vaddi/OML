@@ -33,8 +33,8 @@ if (navigator.userAgent.toLowerCase().indexOf(\'chrome\')!=-1){
   document.write(\'<link rel="stylesheet" type="text/css" href="../css/chrome.css"/>\');
 }
 </script>
-<meta name="keywords" content="<?php echo $keywords; ?>" />
-<meta name="description" content="<?php echo $name; ?>" />
+<meta name="keywords" content="'.$keywords.'" />
+<meta name="description" content="'.$name.'" />
 </head>
     ';
 } else {

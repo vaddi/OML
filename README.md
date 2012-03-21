@@ -1,4 +1,4 @@
-# OML | ORlib Media Library #
+# Online Media Library | OML #
 
 A simple Booknote Manager to Organise Links, Notes, Borred or other stuff aside your real Books. 
 At the time OML is only available in German Language. Latest `master` running at [www.exigem.com/oml](http://www-exigem.com/oml/)
@@ -52,6 +52,7 @@ Would be nice to have:
 *  A nice Idea for index Pageination for better viewing a lot of Books
 *  CodeMirror could be for a better Syntax highlighting on Input
 *  Sortable Linklist Elements
+*  File delete dialoge
 *  handheld CSS File
 *  ReBuild OOP Class based, so Users are able to add own Nodes, Attributes and Content dynamicly
 
@@ -59,7 +60,7 @@ Would be nice to have:
 ## Issuses ##
 
 *  The Add-Link on create and edit Pages are stil brocken. The new javascript var wouldn't saved by submit. 
-*  The Atomfeed is invalid and will not work
+*  The Atomfeeds are invalid and will not show Elements
 
 ## Credits ##
 

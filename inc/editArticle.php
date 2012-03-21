@@ -4,7 +4,6 @@ session_start();
 if (PHP_VERSION>='5')
  require_once('domxml-php4-to-php5.php');
  
-include("head.php");
 include("functions.php");
  
 $file = $_REQUEST['file'];
@@ -84,6 +83,9 @@ if ($file == ""){
 	$linksList = count($linkList);
 	$lentList = array("true" => "verliehen", "false" => "im Regal");
 
+  $name = $headline;
+include("head.php");
+#  $headline = trim_text($headline, 20, $ellipses = false, $strip_html = false);
 
 ?>
 
@@ -95,11 +97,11 @@ if ($file == ""){
 
 <article>
 
-<header id="header_small" style="background:<?php echo $color; ?>;color:#fff;">
+<header id="header_small" style="background:<?php echo $color; ?>;">
   <span class="right" style="margin:-2px 0 0 0;">
     <a href="adminindex.php" class="button">Abbrechen</a>
   </span>
-  <h1 style="margin: 10px 5px 5px;"><span style="font-size:<?php echo $cfs; ?>;"><?php echo htmlspecialchars($headline); ?></span> bearbeiten</h1>
+  <h1 style="margin-top:10px;"><span style="font-size:<?php echo $cfs; ?>;"><?php echo $headline; ?></span> bearbeiten</h1>
 </header>
 
 
@@ -173,9 +175,11 @@ if ($file == ""){
       <td>
         <ul>
           <li>1. [b]TEXT[/b] => &lt;b&gt;TEXT&lt;/b&gt;, Alle einfachen HTML-Tags (auch i oder u)</li>
-          <li>2. [url=TEXT1]TEXT2[/url] => &lt;a href="TEXT1"&gt;TEXT2&lt;/a&gt;, Textlinks oder URLs</li>
-          <li>3. [img]TEXT[/img] => &lt;img src="TEXT" alt="TEXT" /&gt;, Bilder</li>
-          <li>4. Alle URL Angaben (http://domain.tld/) werden automatisch in klickbaren Links dargestellt</li>
+          <li>2. [a=TEXT1]TEXT2[/a] => &lt;a name="TEXT1"&gt;TEXT2&lt;/a&gt;, Anker</li>
+          <li>3. [url]TEXT1[/url] => &lt;a href="TEXT"&gt;TEXT&lt;/a&gt;, einfache URLs</li>
+          <li>3. [url=TEXT1]TEXT2[/url] => &lt;a href="TEXT1"&gt;TEXT2&lt;/a&gt;, URLs mit Text</li>
+          <li>4. [img]TEXT[/img] => &lt;img src="TEXT" alt="TEXT" /&gt;, Bilder</li>
+          <li>5. Alle URL Angaben (http://domain.tld/) werden automatisch in klickbaren Links dargestellt.</li>
         </ul>
       </td>
     </tr>

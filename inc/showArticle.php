@@ -3,7 +3,6 @@
 if (PHP_VERSION>='5')
  require_once('domxml-php4-to-php5.php');
 
-include("head.php");
 include("functions.php");
 
 // Die vorletzte und nächste Datei finden als Link verwenden
@@ -102,6 +101,10 @@ if ($file == ""){
 	$lent_date_array = $root->get_elements_by_tagname("lent_date");
 	$lent_date = extractText($lent_date_array);
 
+  $headline = trim_text($headline, 26, $ellipses = false, $strip_html = false);
+ 
+include("head.php");
+ 
 ?>
 
 <body>
@@ -111,7 +114,7 @@ if ($file == ""){
 <div id="content">
 
 <article>
-<header id="header_big" style="background:<?php echo $color; ?>;color:#fff;">
+<header id="header_big" style="background:<?php echo $color; ?>">
   <span class="right">
     <a href="editArticle.php?file=<?php echo $file ?>" class="button">Bearbeiten</a>
     <?php if (!empty($prev_url)) { echo '<a href="showArticle.php?file='. $prev_url .'" class="button" title="Vorheriges Buch">«</a>'; } ?>
@@ -145,34 +148,8 @@ if (!empty($version)) {
 foreach ($para as $k => $v){
   $v = htmlspecialchars("$v", ENT_NOQUOTES, "UTF-8");
   $v = ereg_replace("[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]","<a href=\"\\0\" target=\"_blank\">\\0</a>", $v); # Links klickbar machen
-    
-  // Simple BBCode 
-  // 0 [url=TEXT1]TEXT2[/url] => <a href=TEXT1>TEXT2</a>    ALL URLs with Textattachment
-  // 1 [url]TEXT[/url] => <a href=TEXT>TEXT</a>             All single URLs and Anchors
-  // 2 [a=TEXT1]TEXT2[/a] => <a name=TEXT1>TEXT2</a>        All Anchors
-  // 3 [img=TEXT1]TEXT2[/img] => <img src=TEXT1 alt=TEXT2 /> All Images
-  // 4 [b]TEXT[/b] => <b>TEXT</b>                           ALL other SINGLE Elements (also i and u)
-  // 5 [h1]TEXT[/h1] => <h1>TEXT</h1> => <i>TEXT</i>        ALL other DOUBLE NUMBER
-  // 6 [quote=TEXT1]TEXT2[/quote] => <quote=TEXT1>TEXT2</quote> ALL other SINGLE Elements with Attribute
-
-  $bbcode_regex = array(
-    0 => '/\[url\=(.+?)](.+?)\[\/url\]/s',
-    1 => '/\[url\](.+?)\[\/url\]/s',
-    2 => '/\[a\=(.+?)](.+?)\[\/a\]/s',
-    3 => '/\[img\=(.+?)](.+?)\[\/img\]/s',
-    4 => '/\[(.+?)\](.+?)\[\/(.+?)\]/s',
-    5 => '/\[(.+?)(.+?)\](.+?)\[\/(.+?)(.+?)\]/s',
-    6 => '/\[(.+?)\=(.+?)](.+?)\[\/(.+?)\]/s');
-      
-  $bbcode_replace = array(
-    0 => '<a href="$1">$2</a>',
-    1 => '<a href="$1">$1</a>', 
-    2 => '<a name="$1">$2</a>',
-    3 => '<img src="$1" alt="$2" />',
-    4 => '<$1>$2</$1>', 
-    5 => '<$1$2>$3</$4$5>', 
-    6 => '<$1=$2>$3</$1>');
-    
+  
+  include("bbcode.php");
   $v = preg_replace($bbcode_regex, $bbcode_replace,$v);
    
   $r1 = array("\n");
@@ -187,10 +164,10 @@ foreach ($para as $k => $v){
 
 <div id="article_foot" style="background:<?php echo $color; ?>;color:#fff;">
   <p class="right">
-    <?php if (!empty($next_url)) { echo '<a href="showArticle.php?file='. $next_url .'" class="button" title="N&auml;chstes Buch">»</a>'; } ?>
-    <a href="../index.php" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>
-    <?php if (!empty($prev_url)) { echo '<a href="showArticle.php?file='. $prev_url .'" class="button" title="Vorheriges Buch">«</a>'; } ?>
     <a href="editArticle.php?file=<?php echo $file ?>" class="button">Bearbeiten</a>
+    <?php if (!empty($prev_url)) { echo '<a href="showArticle.php?file='. $prev_url .'" class="button" title="Vorheriges Buch">«</a>'; } ?>
+    <a href="../index.php" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>
+    <?php if (!empty($next_url)) { echo '<a href="showArticle.php?file='. $next_url .'" class="button" title="N&auml;chstes Buch">»</a>'; } ?>
   </p>
   <p class="left">raw xml file: <a href="<?php echo $open; ?>"><?php echo $file; ?></a></p>
   <div class="clear"></div>

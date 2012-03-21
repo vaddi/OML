@@ -6,7 +6,7 @@ $simple_footer = '&copy;'.date("Y").' ORlib - Media Library | <a href="https://g
 
 if (!empty($_REQUEST['file'])) {
   // Wenn ein Dateiname verwendet wird zeige das Datum von diesem    
-  echo "Die Datei <b>" . $_REQUEST['file'] . "</b> wurde zuletzt am " . date ("d.m.Y \u\m H:i:s\U\h\\r", filemtime("../xml/".$file)) . " bearbeitet.";
+  echo "Die Datei <b>" . $file . "</b> wurde zuletzt am " . date ("d.m.Y \u\m H:i:s \U\h\\r", filemtime("../xml/".$file)) . " bearbeitet.";
 } else {
   // Andernfalls 
   $string = $_SERVER["SCRIPT_NAME"];
@@ -21,7 +21,7 @@ if (!empty($_REQUEST['file'])) {
     // Auf allen anderen Seiten könnten wir das gleiche machen
     // Wir zeigen hier jedoch einen default footer mit Text
     echo $simple_footer;
-    echo ', Eine virtuelle B&uuml;cherei auf Basis einfacher xml Dateien. ';
+    echo ', Eine virtuelle B&uuml;cherei auf Basis einfacher xml Dateien.';
   }
 }
 ?>

@@ -25,12 +25,12 @@ include("functions.php");
 
 <article>
 
-<header id="header_big" style="background:#bbb;color:#fff;">
-  <span class="right" style="margin:-2px 0 0 0;">
+<header id="header_big">
+  <span class="right">
     <a href="createArticle.php" class="button">Buch erstellen</a>
     <a href="../index.php" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>
   </span>
-  <h1>&Uuml;bersicht</h1>
+  <h1>Admin &Uuml;bersicht</h1>
 </header>
 
 <div id="search_content">
@@ -78,17 +78,26 @@ foreach($verzeichnis_glob as $key => $file){
  $abstract = extractText($ab_array);
  $abstract = htmlspecialchars("$abstract", ENT_NOQUOTES, "UTF-8"); 
  
- 	echo "<li>\n";   
-    echo "  <span class='" . $lent . "' style='background:" . $color . ";color:#ffffff;margin:0 0 0 -4px;padding:2px 4px;'>" . $fileCount . ".)</span>&nbsp;\n";
-	echo "  <span>";
-	echo "    <a href=\"showArticle.php?file=".$fileraw . "\">" . $headline . "</a>";
-	echo "  </span>\n";
-	echo "  <span>" . $authors . "</span>\n";
-	echo "  <span class='right' style='background:" . $color . ";color:#ffffff;margin:0 -4px 0 0;padding:0px 4px;'>";
+ if ($fileCount < "10") {
+   $fileCount_view = "0" . $fileCount;
+ } else {
+   $fileCount_view = $fileCount;
+ }
+ 
+ $headline = trim_text($headline, 20, $ellipses = false, $strip_html = false);
+ $authors = trim_text($authors, 45, $ellipses = false, $strip_html = false);
+ 
+ 	echo "<li style='background:" . $color . ";color:#ffffff;'>\n";   
+  echo "    <span class='" . $lent . "' style='margin:0 0 0 -4px;padding:2px 4px;'>" . $fileCount_view . ".)</span>\n";
+	echo "    <span>";
+	echo "      <a href=\"showArticle.php?file=". $fileraw . "\">" . $headline . "</a>";
+	echo "    </span>\n";
+	echo "    <span>" . $authors . "</span>\n";
+	echo "  <span class='right lelist' style='margin:0 -4px 0 0;padding:0px 4px;'>";
 	echo "    " . $lent . " | ";
 	echo "    " . $status . " | ";
-	echo "    <a href=\"editArticle.php?file=".$fileraw . "\">edit</a> | ";
-	echo "    <a href=\"delArticle.php?file=" .$fileraw . "\">delete</a>";
+	echo "    <a href=\"editArticle.php?file=".$fileraw . "\">bearbeiten</a> | ";
+	echo "    <a href=\"delArticle.php?file=" .$fileraw . "\">l&ouml;schen</a>";
 	echo "  </span>\n";
 	echo "</li>\n";
     $fileCount++;
@@ -97,7 +106,13 @@ foreach($verzeichnis_glob as $key => $file){
 </ul>
 </div>
 
-
+<div id="article_foot">
+  <span class="right">
+    <a href="createArticle.php" class="button">Buch erstellen</a>
+    <a href="../index.php" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>
+  </span>
+  <h1>Admin &Uuml;bersicht</h1>
+</div>
 
 </article>
 </div>  <!-- close #content --> 

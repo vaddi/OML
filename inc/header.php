@@ -12,7 +12,7 @@ if (!empty($_REQUEST['file'])) {
       <input name="search" type="text" id="search" placeholder="Suchen">    
       <button name="Search" type="submit" id="Search">Suchen</button>    
     </form>  
-    <a href="adminindex.php" class="button">Admin</a>
+    <a href="adminindex.php" class="button login">Admin</a>
   </div>
   <div id="headnav"> 
     <h1>OML | Online Media Library</h1> 
@@ -35,7 +35,7 @@ if (!empty($_REQUEST['file'])) {
       <input name="search" type="text" id="search" placeholder="Suchen">    
       <button name="Search" type="submit" id="Search">Suchen</button>    
     </form>  
-    <a href="inc/adminindex.php" class="button">Admin</a>
+    <a href="inc/adminindex.php" class="button login">Admin</a>
   </div>
   <div id="headnav"> 
     <h1>OML | Online Media Library</h1> 
@@ -55,7 +55,7 @@ if (!empty($_REQUEST['file'])) {
      <input name="search" type="text" id="search" placeholder="Suchen">    
      <button name="Search" type="submit" id="Search">Suchen</button>    
     </form>  
-    <a href="adminindex.php" class="button">Admin</a>
+    <a href="adminindex.php" class="button login">Admin</a>
   </div>
   <div id="headnav"> 
     <h1>OML | Online Media Library</h1>  
@@ -74,7 +74,7 @@ if (!empty($_REQUEST['file'])) {
      <input name="search" type="text" id="search" placeholder="Suchen">    
      <button name="Search" type="submit" id="Search">Suchen</button>    
     </form>  
-    <a href="logout.php" class="button">Logout</a>
+    <a href="logout.php" class="button login">Logout</a>
   </div>
   <div id="headnav"> 
     <h1>OML | Online Media Library</h1>  
@@ -94,7 +94,7 @@ if (!empty($_REQUEST['file'])) {
      <input name="search" type="text" id="search" placeholder="Suchen">    
      <button name="Search" type="submit" id="Search">Suchen</button>    
     </form>  
-    <a href="adminindex.php" class="button">Admin</a>
+    <a href="adminindex.php" class="button login">Admin</a>
   </div>
   <div id="headnav"> 
     <h1>OML | Online Media Library</h1> 

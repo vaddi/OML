@@ -33,7 +33,7 @@ include("head.php");
         </div></td>
     </tr>
     <tr> 
-      <td colspan="2"><div align="left"> 
+      <td colspan="2"><div align="left" style="margin:10px 0 0 0;"> 
           <input class="button" type="submit" name="Submit" value="Anmelden" />
            
           <input class="button" type="reset" name="reset" id="reset" value="Zur&uuml;cksetzen" />
@@ -50,8 +50,8 @@ include("head.php");
 
 <table width="290" border="0" align="center" cellpadding="4" cellspacing="1">
     <tr> 
-      <td colspan="2"><div align="center" style="font-size:105%;margin:-10px 0 30px 60px ;"> 
-        <a href="../index.php" style="text-decoration:none;" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>	
+      <td colspan="2"><div align="center" style="font-size:96%;margin:-10px 0 30px 86px ;"> 
+        <a href="../index.php" style="text-decoration:none;text-shadow:none" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>	
           
         </div>
       </td>

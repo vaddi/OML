@@ -95,7 +95,7 @@ $results_count = count($results);
 
 <article>
 <header id="header_big">
-  <span class="right" style="margin:-2px 0 0 0;">
+  <span class="right">
     <a href="../index.php" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>
   </span>
   <h1>Suchergebnisse</h1>
@@ -124,9 +124,11 @@ if ($val == "empty") {
   		echo "<a href=\"showArticle.php?file=".$listing["file"]."\">" . $listing["headline"]."</a> -> \n";
 #  		$counting = count($key);echo $counting . " ";
 #     $counting = count($results);echo $counting . " ";
-      $text = $listing["abstract"];
 
-  		echo trim_text($text, 320, $ellipses = true, $strip_html = false);
+      include("bbcode.php");
+      $text = preg_replace($bbcode_regex, $bbcode_replace, $listing["pmain"]);
+      
+  		echo trim_text($text, 320, $ellipses = true, $strip_html = true);
 	    echo '</li>';
 	  }
   } else {
@@ -140,6 +142,13 @@ if ($val == "empty") {
 }
 ?>
 </ul>
+</div>
+
+<div id="article_foot">
+  <span class="right">
+    <a href="../index.php" class="button">Zur&uuml;ck zur &Uuml;bersicht</a>
+  </span>
+  <h1>Suchergebnisse</h1>
 </div>
 
 </article>

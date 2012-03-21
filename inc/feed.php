@@ -22,6 +22,8 @@ $url= 'http://'.$_SERVER['HTTP_HOST'];
 $url.= substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'],'/')+1);
 $url_raw = str_replace("inc/","",$url);
 
+include("bbcode.php");
+
 if(isset($_REQUEST['type'])) {
   $request = $_REQUEST['type'];
 } else {
@@ -62,7 +64,7 @@ if ( eregi("rss",$request) ||
   $info->appendChild($text);
   $info= $doc->createElement('description');
   $channel->appendChild($info);
-  $text= $doc->createTextNode("This is the RSS Newsfeed for OML, ORlib Media Library");
+  $text= $doc->createTextNode("This is the RSS Newsfeed for OML, Online Media Library");
   $info->appendChild($text);
   $info= $doc->createElement('lastBuildDate');
   $channel->appendChild($info);
@@ -75,7 +77,7 @@ if ( eregi("rss",$request) ||
   $fileCount = 0;
 
   foreach($verzeichnis_glob as $key => $file) {
-  
+    
     // Get Info from each file
     $open = $file;    
     $xml = domxml_open_file($open);    
@@ -97,6 +99,11 @@ if ( eregi("rss",$request) ||
     $ab_array = $root->get_elements_by_tagname("abstract"); 
     $abstract = extractText($ab_array);
     $abstract = htmlspecialchars("$abstract", ENT_NOQUOTES, "UTF-8"); 
+    
+    $desc_array = $root->get_elements_by_tagname("description");
+    $description = extractText($desc_array);
+    $description = preg_replace($bbcode_regex, $bbcode_replace, $description);
+    $description = trim_text($description, 320, $ellipses = true, $strip_html = true);
    
     if ($status != "online"){    
       continue;    
@@ -113,7 +120,7 @@ if ( eregi("rss",$request) ||
 
     $child = $doc->createElement('description');
     $item->appendChild($child);
-    $value = $doc->createTextNode($abstract);
+    $value = $doc->createTextNode($description);
     $child->appendChild($value);
 
     $child = $doc->createElement('link');
@@ -169,7 +176,7 @@ if (eregi("rss2",$request) ||
   $info->appendChild($text);
   $info= $doc->createElement('description');
   $channel->appendChild($info);
-  $text= $doc->createTextNode("This is the RSS Newsfeed for OML, ORlib Media Library");
+  $text= $doc->createTextNode("This is the RSS Newsfeed for OML, Online Media Library");
   $info->appendChild($text);
   $info= $doc->createElement('lastBuildDate');
   $channel->appendChild($info);
@@ -205,6 +212,11 @@ if (eregi("rss2",$request) ||
     $abstract = extractText($ab_array);
     $abstract = htmlspecialchars("$abstract", ENT_NOQUOTES, "UTF-8"); 
    
+    $desc_array = $root->get_elements_by_tagname("description");
+    $description = extractText($desc_array);
+    $description = preg_replace($bbcode_regex, $bbcode_replace, $description);
+    $description = trim_text($description, 320, $ellipses = true, $strip_html = true);
+
     if ($status != "online"){    
       continue;    
     }
@@ -220,7 +232,7 @@ if (eregi("rss2",$request) ||
 
     $child = $doc->createElement('description');
     $item->appendChild($child);
-    $value = $doc->createTextNode($abstract);
+    $value = $doc->createTextNode($description);
     $child->appendChild($value);
 
     $child = $doc->createElement('link');
@@ -290,20 +302,20 @@ if (eregi("atom",$request) ||
   $text= $doc->createTextNode(Date('r')); // now
   $info->appendChild($text);
 
-  $mlinks = $doc->createElement('author');
-  $root->appendChild($mlinks);
+  $info = $doc->createElement('author');
+  $root->appendChild($info);
 
-  $info= $doc->createElement('name');
-  $mlinks->appendChild($info);
+  $info2= $doc->createElement('name');
+  $info->appendChild($info2);
   $text= $doc->createTextNode('Maik Vattersen');
-  $info->appendChild($text);
+  $info2->appendChild($text);
 
-  $info= $doc->createElement('email');
-  $mlinks->appendChild($info);
+  $info2= $doc->createElement('email');
+  $info->appendChild($info2);
   $text= $doc->createTextNode('m.vattersen@exigem.com');
-  $info->appendChild($text);
+  $info2->appendChild($text);
 
-  $mlinks->appendChild($info);
+  $info->appendChild($info2);
 
   // items for this channel
   $verzeichnis_raw = '../xml/';
@@ -332,56 +344,58 @@ if (eregi("atom",$request) ||
     $ab_array = $root->get_elements_by_tagname("abstract"); 
     $abstract = extractText($ab_array);
     $abstract = htmlspecialchars("$abstract", ENT_NOQUOTES, "UTF-8"); 
-   
+       
+    $desc_array = $root->get_elements_by_tagname("description");
+    $description = extractText($desc_array);
+    $description = preg_replace($bbcode_regex, $bbcode_replace, $description);
+    $description = trim_text($description, 320, $ellipses = true, $strip_html = true);
+
     if ($status != "online"){    
       continue;    
     }
 
-    // Create one Item
-    $item = $doc->createElement('entry');
-    $mlinks->appendChild($item);
+    // Create Item
+    $items = $doc->createElement('entry');
+    $info->appendChild($items);
 
     $child = $doc->createElement('title');
-    $item->appendChild($child);
+    $items->appendChild($child);
     $value = $doc->createTextNode($headline);
     $child->appendChild($value);
 
     $child = $doc->createElement('link');
-    $item->appendChild($child);
+    $items->appendChild($child);
     $urls = str_replace("../xml/","inc/showArticle.php?file=",$open);
     $value = $doc->createTextNode($url_raw.$urls);
     $child->appendChild($value);
 
     $child = $doc->createElement('author');
-    $item->appendChild($child);
+    $items->appendChild($child);
 
-    #$mlinks = $doc->createElement('author');
-    #$root->appendChild($mlinks);
-
-    $child = $doc->createElement('name');
-    $item->appendChild($child);
+    $child2 = $doc->createElement('name');
+    $items->appendChild($child2);
     $value = $doc->createTextNode($authors);
-    $child->appendChild($value);
+    $child2->appendChild($value);
 
-    #$mlinks->appendChild($info);
-    $item->appendChild($child);
+    $child->appendChild($child2);
 
 
     $child = $doc->createElement('updated');
-    $item->appendChild($child);
+    $items->appendChild($child);
     $value = $doc->createTextNode(date('r', filemtime($file)));
     $child->appendChild($value);
 
     $child = $doc->createElement('summary');
-    $item->appendChild($child);
-    $value = $doc->createTextNode($abstract);
+    $items->appendChild($child);
+    $value = $doc->createTextNode($description);
     $child->appendChild($value);
 
-    $item->appendChild($child);
+#    $info->appendChild($items);
 
     $fileCount++;
 
   }
+
   // close foreach
   // and output as xml
   echo $doc->saveXML();
