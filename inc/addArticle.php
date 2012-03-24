@@ -45,7 +45,7 @@ $lent = stripslashes($lent);
 $lent_name = stripslashes($lent_name);
 $lent_date = stripslashes($lent_date);
 
-if (PHP_VERSION>='5') require_once('domxml-php4-to-php5.php');
+if (PHP_VERSION>='5') require_once('ext/domxml-php4-to-php5/domxml-php4-to-php5.php');
 
 //create document root
 $doc= new DomDocument('1.0', 'UTF-8');

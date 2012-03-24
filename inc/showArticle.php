@@ -1,7 +1,6 @@
 <?php
 
-if (PHP_VERSION>='5')
- require_once('domxml-php4-to-php5.php');
+if (PHP_VERSION>='5') require_once('ext/domxml-php4-to-php5/domxml-php4-to-php5.php');
 
 include("functions.php");
 
@@ -152,8 +151,8 @@ foreach ($para as $k => $v){
   include("bbcode.php");
   $v = preg_replace($bbcode_regex, $bbcode_replace,$v);
    
-  $r1 = array("\n");
-  $r2 = array("<br />");
+  $r1 = array("  ","\n");
+  $r2 = array("&nbsp; ","<br />");
   $v = str_replace( $r1, $r2, $v );
     
   if (!empty($v)) {

@@ -3,14 +3,12 @@
 
 Rebuild by Maik Vattersen http://www.exigem.com/
 
-Use a cronjob to push logdata from system to file
-
 Please feel free to use as long as you give me credit and understand there is no warranty that comes with this script.
 */
 
-if (PHP_VERSION>='5')
-require_once('domxml-php4-to-php5.php');
+if (PHP_VERSION>='5') require_once('ext/domxml-php4-to-php5/domxml-php4-to-php5.php');
 include("functions.php");
+
 
 //$file = "error.log";
 $max = 10; // max number of entries
@@ -48,7 +46,7 @@ if ( eregi("rss",$request) ||
   $doc->appendChild($root);
   $version = $doc->createAttribute('version');
   $root->appendChild($version);
-  $text= $doc->createTextNode('1.0');
+  $text= $doc->createTextNode('2.0');
   $version->appendChild($text);
   $channel= $doc->createElement('channel');
   $root->appendChild($channel);
@@ -56,7 +54,7 @@ if ( eregi("rss",$request) ||
   // nodes of channel
   $info= $doc->createElement('title');
   $channel->appendChild($info);
-  $text= $doc->createTextNode('RSS Feeds for '.$url_raw);
+  $text= $doc->createTextNode('RSS 1 Feeds für '.$url_raw);
   $info->appendChild($text);
   $info= $doc->createElement('link');
   $channel->appendChild($info);
@@ -64,14 +62,18 @@ if ( eregi("rss",$request) ||
   $info->appendChild($text);
   $info= $doc->createElement('description');
   $channel->appendChild($info);
-  $text= $doc->createTextNode("This is the RSS Newsfeed for OML, Online Media Library");
+  $text= $doc->createTextNode("Der Online Media Library RSS Newsfeed");
   $info->appendChild($text);
   $info= $doc->createElement('lastBuildDate');
   $channel->appendChild($info);
   $text= $doc->createTextNode(Date('r')); // now
   $info->appendChild($text);
+  $info= $doc->createElement('language');
+  $channel->appendChild($info);
+  $text= $doc->createTextNode("de");
+  $info->appendChild($text);
 
-  // items for this channel
+  // Elements for this channel
   $verzeichnis_raw = '../xml/';
   $verzeichnis_glob = glob($verzeichnis_raw . '*.xml');
   $fileCount = 0;
@@ -134,6 +136,12 @@ if ( eregi("rss",$request) ||
     $value = $doc->createTextNode(date('r', filemtime($file)));
     $child->appendChild($value);
 
+    $child = $doc->createElement('guid');
+    $item->appendChild($child);
+    $urls = str_replace("../xml/","inc/showArticle.php?file=",$open);
+    $value = $doc->createTextNode($url_raw.$urls);
+    $child->appendChild($value);
+
     $fileCount++;
     
   }
@@ -168,7 +176,7 @@ if (eregi("rss2",$request) ||
   // nodes of channel
   $info= $doc->createElement('title');
   $channel->appendChild($info);
-  $text= $doc->createTextNode('RSS Feeds for '.$url_raw);
+  $text= $doc->createTextNode('RSS 2 Feeds for '.$url_raw);
   $info->appendChild($text);
   $info= $doc->createElement('link');
   $channel->appendChild($info);
@@ -176,14 +184,14 @@ if (eregi("rss2",$request) ||
   $info->appendChild($text);
   $info= $doc->createElement('description');
   $channel->appendChild($info);
-  $text= $doc->createTextNode("This is the RSS Newsfeed for OML, Online Media Library");
+  $text= $doc->createTextNode("Der RSS 2 Newsfeed der Online Media Library");
   $info->appendChild($text);
   $info= $doc->createElement('lastBuildDate');
   $channel->appendChild($info);
   $text= $doc->createTextNode(Date('r')); // now
   $info->appendChild($text);
 
-  // items for this channel
+  // Elements for this channel
   $verzeichnis_raw = '../xml/';
   $verzeichnis_glob = glob($verzeichnis_raw . '*.xml');
   $fileCount = 0;
@@ -266,58 +274,27 @@ if (eregi("atom",$request) ||
     eregi("ATOM.xml",$request) || 
     eregi("Atom.xml",$request) ) {
 
-  $doc= new DomDocument('1.0', 'UTF-8');
-  $doc->formatOutput = true;
+  include("ext/feedcreator/feedcreator.class.php");
+
+#  $doc= new DomDocument('1.0', 'UTF-8');
+#  $doc->formatOutput = true;
 
   // create root node
-  $root = $doc->createElement('feed');
-  $doc->appendChild($root);
-  $version = $doc->createAttribute('xml:lang');
-  $root->appendChild($version);
-  $text= $doc->createTextNode('de-DE');
-  $version->appendChild($text);
-  $version = $doc->createAttribute('xmlns');
-  $root->appendChild($version);
-  $text= $doc->createTextNode('http://www.w3.org/2005/Atom');
-  $version->appendChild($text);
+$rss = new UniversalFeedCreator();
+#$rss->useCached("false");
+$rss->title = "OML Atom News Feed";
+$rss->description = "Der Atom Feed der Online Media Library";
+$rss->link = $url_raw;
+$rss->syndicationURL = $url_raw;
 
-  // nodes of channel
-  $info= $doc->createElement('title');
-  $root->appendChild($info);
-  $text= $doc->createTextNode('Atom Feed for '.$url_raw);
-  $info->appendChild($text);
+#$image = new FeedImage();
+#$image->title = "dailyphp.net logo";
+#$image->url = "http://www.dailyphp.net/images/logo.gif";
+#$image->link = "http://www.dailyphp.net";
+#$image->description = "Feed provided by dailyphp.net. Click to visit.";
+#$rss->image = $image;
 
-  $info= $doc->createElement('subtitle');
-  $root->appendChild($info);
-  $text= $doc->createTextNode("This is the RSS Newsfeed for OML, ORlib Media Library");
-  $info->appendChild($text);
-
-  $info= $doc->createElement('link');
-  $root->appendChild($info);
-  $text= $doc->createTextNode($url);
-  $info->appendChild($text);
-
-  $info= $doc->createElement('updated');
-  $root->appendChild($info);
-  $text= $doc->createTextNode(Date('r')); // now
-  $info->appendChild($text);
-
-  $info = $doc->createElement('author');
-  $root->appendChild($info);
-
-  $info2= $doc->createElement('name');
-  $info->appendChild($info2);
-  $text= $doc->createTextNode('Maik Vattersen');
-  $info2->appendChild($text);
-
-  $info2= $doc->createElement('email');
-  $info->appendChild($info2);
-  $text= $doc->createTextNode('m.vattersen@exigem.com');
-  $info2->appendChild($text);
-
-  $info->appendChild($info2);
-
-  // items for this channel
+  // Elements for this channel
   $verzeichnis_raw = '../xml/';
   $verzeichnis_glob = glob($verzeichnis_raw . '*.xml');
   $fileCount = 0;
@@ -355,50 +332,75 @@ if (eregi("atom",$request) ||
     }
 
     // Create Item
-    $items = $doc->createElement('entry');
-    $info->appendChild($items);
+    
+    $item = new FeedItem();
+    $item->title = $headline;
+    $item->link = $url_raw.str_replace("../xml/","inc/showArticle.php?file=",$open);
+    $description = ereg_replace("[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]","<a href=\"\\0\" target=\"_blank\">\\0</a>", $description); # Links klickbar machen
+    $item->description = $description;
+    $item->descriptionHtmlSyndicated = true;
+    $item->date = date('r', filemtime($open));
+    $item->source = $url_raw;
+    $item->author = $authors;
+    
+    $rss->addItem($item);
+#    
+#    $info2 = $doc->createElement('entry');
+#    $info->appendChild($info2);
 
-    $child = $doc->createElement('title');
-    $items->appendChild($child);
-    $value = $doc->createTextNode($headline);
-    $child->appendChild($value);
+#    $info3 = $doc->createElement('title');
+#    $info2->appendChild($info3);
+#    $value = $doc->createTextNode($headline);
+#    $info3->appendChild($value);
 
-    $child = $doc->createElement('link');
-    $items->appendChild($child);
-    $urls = str_replace("../xml/","inc/showArticle.php?file=",$open);
-    $value = $doc->createTextNode($url_raw.$urls);
-    $child->appendChild($value);
+#    $info3 = $doc->createElement('link');
+#    $info2->appendChild($info3);
+#    $urls = str_replace("../xml/","inc/showArticle.php?file=",$open);
+#    $value = $doc->createTextNode($url_raw.$urls);
+#    $info3->appendChild($value);
 
-    $child = $doc->createElement('author');
-    $items->appendChild($child);
+#    $info3 = $doc->createElement('author');
+#    $info2->appendChild($info3);
 
-    $child2 = $doc->createElement('name');
-    $items->appendChild($child2);
-    $value = $doc->createTextNode($authors);
-    $child2->appendChild($value);
+#    $info32 = $doc->createElement('name');
+#    $info2->appendChild($info32);
+#    $value = $doc->createTextNode($authors);
+#    $info32->appendChild($value);
 
-    $child->appendChild($child2);
+#    $info3->appendChild($info32);
 
 
-    $child = $doc->createElement('updated');
-    $items->appendChild($child);
-    $value = $doc->createTextNode(date('r', filemtime($file)));
-    $child->appendChild($value);
+#    $info3 = $doc->createElement('updated');
+#    $info2->appendChild($info3);
+#    $value = $doc->createTextNode(date('r', filemtime($file)));
+#    $info3->appendChild($value);
 
-    $child = $doc->createElement('summary');
-    $items->appendChild($child);
-    $value = $doc->createTextNode($description);
-    $child->appendChild($value);
+#    $info3 = $doc->createElement('summary');
+#    $info2->appendChild($info3);
+#    $value = $doc->createTextNode($description);
+#    $info3->appendChild($value);
 
-#    $info->appendChild($items);
-
+#    $info2->appendChild($info3);
+    
     $fileCount++;
 
   }
 
   // close foreach
   // and output as xml
-  echo $doc->saveXML();
+#  $doc = saveFeed("RSS1.0", "news/feed.xml");
+if ($_REQUEST['type'] == 'atom') {
+	echo $rss->outputFeed("ATOM1.0"); 
+	//$feed->saveFeed("ATOM1.0", "news/feed.xml"); 
+} else if ($_REQUEST['type'] == 'atom0'){
+	echo $rss->outputFeed("ATOM0.3"); 
+} else if ($_REQUEST['type'] == 'rss2.0'){
+	echo $rss->outputFeed("RSS2.0"); 
+}  else  {
+	echo $rss->outputFeed("RSS"); 
+}
+#  echo $rss->outputFeed("ATOM1.0");
+  
 
 } 
 

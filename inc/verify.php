@@ -1,8 +1,14 @@
 <?php
 session_start();
 
+// DE: Bitte Passen Sie diese Variablen an!
+// EN: Pleas Change this Variables!
+
 $user = 'admin';
 $passw = 'insecure';
+
+// DE: Ab hier nicht weiter verändern
+// EN: Dont edit after here
 
 if (($_POST["username"] == $user) and ($_POST["password"] == $passw)){
 	$_SESSION["login"] = "true";

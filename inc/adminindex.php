@@ -7,8 +7,7 @@ if ($_SESSION["login"] != "true"){
 	exit;
 }
 
-if (PHP_VERSION>='5')
- require_once('domxml-php4-to-php5.php');
+if (PHP_VERSION>='5') require_once('ext/domxml-php4-to-php5/domxml-php4-to-php5.php');
 
 include("head.php");
 include("functions.php");
@@ -84,11 +83,12 @@ foreach($verzeichnis_glob as $key => $file){
    $fileCount_view = $fileCount;
  }
  
- $headline = trim_text($headline, 20, $ellipses = false, $strip_html = false);
- $authors = trim_text($authors, 45, $ellipses = false, $strip_html = false);
+ // Strip long Name and Tittes
+ $headline = trim_text($headline, 26, $ellipses = false, $strip_html = false);
+ $authors = trim_text($authors, 34, $ellipses = false, $strip_html = false);
  
- 	echo "<li style='background:" . $color . ";color:#ffffff;'>\n";   
-  echo "    <span class='" . $lent . "' style='margin:0 0 0 -4px;padding:2px 4px;'>" . $fileCount_view . ".)</span>\n";
+ 	echo "<li>\n";   
+  echo "    <span class='" . $lent . "' style='background:" . $color . ";color:#ffffff;margin:0 0 0 -4px;padding:2px 4px;'>" . $fileCount_view . ".)</span>\n";
 	echo "    <span>";
 	echo "      <a href=\"showArticle.php?file=". $fileraw . "\">" . $headline . "</a>";
 	echo "    </span>\n";

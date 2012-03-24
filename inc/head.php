@@ -25,6 +25,7 @@ if (!empty($_REQUEST['file'])) {
 <title>OML | '.$filereq.' '.$action.'</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="../css/print.css" type="text/css" rel="stylesheet" media="print" />
 <script src="../js/datum.js" type="text/javascript"></script>
 <script src="../js/jquery-1.7.1.min.js"></script>
 <script src="../js/app.js" type="text/javascript"></script>
@@ -49,7 +50,7 @@ if (navigator.userAgent.toLowerCase().indexOf(\'chrome\')!=-1){
 <head>    
   <title>OML | '.$url_raw.'</title>    
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--  <link rel="alternate" type="text/xml" title="RSS .92" href="inc/feed.php" /> -->
+  <link rel="alternate" type="text/xml" title="RSS .92" href="inc/feed.php" />
   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="inc/feed.php?type=rss.xml" />
   <link rel="alternate" type="application/atom+xml" title="Atom 0.3"  href="inc/feed.php?type=atom.xml" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen" />

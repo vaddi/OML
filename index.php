@@ -1,6 +1,5 @@
 <?php
-if (PHP_VERSION>='5')
-require_once('inc/domxml-php4-to-php5.php');
+if (PHP_VERSION>='5') require_once('inc/ext/domxml-php4-to-php5/domxml-php4-to-php5.php');
 include("inc/functions.php"); 
 include("inc/head.php"); 
 ?>    

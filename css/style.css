@@ -80,6 +80,7 @@ header {
 header .search {
   max-width:50%;
   float:right;
+  
 }
 header .search form {
   float:left;
@@ -90,9 +91,12 @@ header .search input {
   padding:2px;
   margin:0px 3px 0 0;
 }
+header .search button {
+font-size:96%;
+}
 header .login {
 /*  margin: 3px 0 0 0;*/
-font-size:98%
+font-size:100%
 }
 
 header #header-time {
@@ -152,6 +156,7 @@ header a:hover, .search .login a:hover {color:#000;}
 /*header .search * {margin-top:-1px;}*/
 .main-nav a:hover {text-shadow:none;}
 
+#header_small {color:#fff;}
 #content_small a, #content a, footer a {
     -moz-transition: text-shadow 0.4s ease-out;
     -webkit-transition: text-shadow 0.4s ease-out;
@@ -161,16 +166,17 @@ header a:hover, .search .login a:hover {color:#000;}
 }
 #content_small a:hover, #content a:hover, footer a:hover {
     text-shadow: 0 0 1px;
-    -moz-transition: text-shadow 0.2s ease-in;
-    -webkit-transition: text-shadow 0.2s ease-in;
-    -ms-transition: text-shadow 0.2s ease-in;
-    -o-transition: text-shadow 0.2s ease-in;
-    transition: text-shadow 0.2s ease-in;
+    -moz-transition: text-shadow 0.1s ease-in;
+    -webkit-transition: text-shadow 0.1s ease-in;
+    -ms-transition: text-shadow 0.1s ease-in;
+    -o-transition: text-shadow 0.1s ease-in;
+    transition: text-shadow 0.1s ease-in;
 }
 #content #header_big a, #content #header_small a {text-shadow:none;}
 #content #article_foot a { color:#fff;}
-#content #search_content .right a, #content #search_content .right a:visited, #content #search_content a, #content #search_content a:visited { color:#ccc;}
-#content #article_foot a:hover, #content #search_content .right a:hover, #content #search_content a:hover { text-shadow: 0 0 1px #fff;color:#fff;}
+#content #search_content .right a, #content #search_content .right a:visited, #content #search_content a, #content #search_content a:visited { color:#666;}
+#content #article_foot a:hover { text-shadow: 0 0 1px #fff;color:#fff;}
+#content #search_content .right a:hover, #content #search_content a:hover { text-shadow: 0 0 1px #000;color:#000;}
 #content #article_foot .right a { color:#565656; }
 #content #article_foot .right a:hover { color:#000; }
 
@@ -193,8 +199,8 @@ header a:hover, .search .login a:hover {color:#000;}
 #content article p, #content #search_content,#content .para {margin: 10px;}
 #content #article_foot {border-top:1px solid #ccc;padding:10px 10px;}
 #content #article_foot p { margin:0;padding:0;border:none;}
-#content #search_content li {padding:0 5px;}
-#content #search_content li:hover {background:#aaa;}
+#content #search_content li {padding:2px 5px;}
+#content #search_content li:hover {background:#ddd;}
 #content p,#content .para {border-bottom:1px solid #ccc;}
 #content .para+.para+.para+.para {border-bottom:none;}
 

@@ -60,7 +60,6 @@ Would be nice to have:
 ## Issuses ##
 
 *  The Add-Link on create and edit Pages are stil brocken. The new javascript var wouldn't saved by submit. 
-*  The Atomfeeds are invalid and will not show Elements
 
 ## Credits ##
 

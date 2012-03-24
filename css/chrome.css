@@ -1,12 +1,16 @@
 header .search button {
-  margin-top:-23px;
+  margin-top:2px;
   padding:1px 6px;
+  font-size:96%;
 }
 
 div.inlinebg {min-width:215px;height:30px;margin:0 0 0 5px }
 
-.spine_publisher {margin: 0 0 0 -8px;padding: 0 0 10px 0 ;}
+.spine_publisher {margin: 0 -2px 0 -6px;padding: 0 0 10px 0 ;}
 .spine_author {padding:2px 0 0 2px;}
-.spine_edition {margin: 6px 2px 0 -6px;padding: 0 ;}
+.spine_edition {margin: 2px 2px 0 -6px;padding: 0 0 6px 0;}
 
-
+#content_small a, #content a, footer a {
+    text-shadow:0 0 1px;
+}
+    

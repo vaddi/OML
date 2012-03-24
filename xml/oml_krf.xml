@@ -66,18 +66,18 @@ In der adminindex wird Ihnen eine &#xDC;bersicht aller angelegten Dateien gezeig
 &#xD;
 &#xD;
 </description>
-  <colophone>Diese Anwendung speichert ihre Dateien im [url=#xml]xml[/url] Dateiformat [url=../xml/]./xml/[/url]. So k&#xF6;nnen Sie diese leicht in anderen Anwendungen verwenden.&#xD;
+  <colophone>Diese Anwendung speichert ihre Dateien im [url=#xml]xml[/url] Dateiformat (In dem Ordner [url=../xml/]./xml/[/url]). So k&#xF6;nnen Sie diese leicht in anderen Anwendungen verwenden.&#xD;
 &#xD;
 &#xD;
 [b][a=Quellen]Quellen[/a][/b]&#xD;
 &#xD;
-[a=xml]http://de.wikipedia.org/wiki/Xml[/a]&#xD;
+[a=xml]http://de.wikipedia.org/wiki/Xml [/a]&#xD;
 </colophone>
   <links>
     <link>http://www.exigem.com/oml/</link>
   </links>
-  <version>v 0.1</version>
-  <lent>verliehen</lent>
+  <version>v 0.2</version>
+  <lent>im Regal</lent>
   <lent_name></lent_name>
   <lent_date></lent_date>
 </book>
