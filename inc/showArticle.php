@@ -132,7 +132,7 @@ echo '<p>Verliehen am ' . $lent_date . ' an ' . $lent_name . '</p>';
 }
 
 if (!empty($authors)) {
-  echo '<p>Authoren: ' . $authors . '</p>';
+  echo '<p>Autoren: ' . $authors . '</p>';
 }
 
 if (!empty($isbn)) {
