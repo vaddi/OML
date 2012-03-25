@@ -1,0 +1,16 @@
+.left {float:left;}
+.right {float:right;}
+.center {margin:0 250px 0 0;}
+.clear {clear:both;}
+header {
+  display:	block;
+/*  font-size:	120%;*/
+  padding: 10px;
+}
+header .search, header .search form, header .search input, header .login {
+  display:	none;
+}
+
+
+
+
