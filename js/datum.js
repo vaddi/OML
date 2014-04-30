@@ -60,3 +60,4 @@ function clockon() {
 	var timer=setTimeout("clockon()",1000)
 }
 window.onload=clockon
+
