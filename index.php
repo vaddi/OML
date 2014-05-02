@@ -80,7 +80,7 @@ foreach($verzeichnis_glob as $key => $file){
     echo '    <span class="spine_title" style="margin:-7px 0 0 0;line-height:100%;">' . $headline . '<br />'.$status.'</span>'."\n"; 
     echo '  </div>'."\n";
     echo '  <span class="spine_edition">' . $version . '</span>'."\n";
-    echo '</a>'."\n";    
+    echo '  </a>'."\n";    
     echo '</li>'."\n"; 
  }
    
