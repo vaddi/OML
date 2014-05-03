@@ -111,6 +111,6 @@ foreach($verzeichnis_glob as $key => $file){
 <div class="clear"></div>
 
 </div>
-<!-- comment --> 
+<!-- some comment --> 
 </body>    
 </html>

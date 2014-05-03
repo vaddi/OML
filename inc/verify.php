@@ -5,7 +5,7 @@ session_start();
 // EN: Pleas Change this Variables!
 
 $user = 'admin';
-$passw = 'insecure';
+$passw = 'nimda';
 
 // DE: Ab hier nicht weiter verändern
 // EN: Dont edit after here
